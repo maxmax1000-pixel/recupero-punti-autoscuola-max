@@ -96,21 +96,13 @@ slides.push(
     },
 {
       title:'Che semaforo è?', duration:'4 min',
-      teacher:'MODELLO B — RISPOSTA LIBERA con immagine vettoriale. Mostra i tre simboli senza anticipare il nome: X rossa a sinistra, freccia gialla lampeggiante obliqua al centro e freccia verde verso il basso a destra. Chiedi semplicemente “Che semaforo è?”. Dopo la risposta della classe premi “Mostra soluzione”. Nella slide successiva approfondiremo il significato operativo delle tre indicazioni.',
+      teacher:'MODELLO B — RISPOSTA LIBERA con immagine approvata. Mostra il pannello senza anticipare il nome: X rossa a sinistra, freccia gialla obliqua al centro con punta rivolta verso destra, freccia verde verso il basso a destra. Chiedi semplicemente “Che semaforo è?”. Dopo la risposta della classe premi “Mostra soluzione”.',
       html:()=>`<div class="case-template">
         <div class="case-head"><span class="case-number">Caso 9</span><span class="case-topic">Corsie reversibili</span></div>
         <div class="case-question">Che semaforo è?</div>
         <div class="case-instruction">Osserva i simboli e rispondi liberamente. La risposta compare solo dopo aver premuto il tasto.</div>
         <div class="case-media" style="display:flex;justify-content:center">
-          <svg viewBox="0 0 900 270" role="img" aria-label="Semaforo per corsie reversibili con X rossa, freccia gialla obliqua e freccia verde verso il basso" style="width:min(900px,100%);height:auto;max-height:285px;background:#0c100f;border:1px solid #3a4742;border-radius:22px;padding:14px;box-shadow:0 16px 42px rgba(0,0,0,.22)">
-            <rect x="10" y="10" width="880" height="250" rx="24" fill="#101513" stroke="#68746f" stroke-width="4"/>
-            <circle cx="170" cy="135" r="94" fill="#050706" stroke="#313a36" stroke-width="3"/>
-            <circle cx="450" cy="135" r="94" fill="#050706" stroke="#313a36" stroke-width="3"/>
-            <circle cx="730" cy="135" r="94" fill="#050706" stroke="#313a36" stroke-width="3"/>
-            <g stroke="#ff2b2b" stroke-width="28" stroke-linecap="square"><line x1="120" y1="85" x2="220" y2="185"/><line x1="220" y1="85" x2="120" y2="185"/></g>
-            <g fill="none" stroke="#ffd21f" stroke-width="26" stroke-linecap="square" stroke-linejoin="miter"><path d="M405 82 L505 182 M505 182 L505 127 M505 182 L450 182"/></g>
-            <g fill="none" stroke="#18e54e" stroke-width="26" stroke-linecap="square" stroke-linejoin="miter"><path d="M730 70 L730 188 M730 188 L680 138 M730 188 L780 138"/></g>
-          </svg>
+          <img src="reversibili-approved.webp" alt="Semaforo per corsie reversibili: X rossa, freccia gialla obliqua verso destra e freccia verde verso il basso" style="display:block;width:min(1050px,100%);height:auto;max-height:330px;object-fit:contain;border-radius:20px;box-shadow:0 16px 42px rgba(0,0,0,.22)">
         </div>
         <div class="case-reveal-row"><button class="case-reveal-btn" data-case-reveal ${state.revealed?'disabled':''}><span class="case-reveal-icon">✓</span>${state.revealed?'Soluzione mostrata':'Mostra soluzione'}</button></div>
         <div class="case-solution ${state.revealed?'visible':''}" id="reveal">
