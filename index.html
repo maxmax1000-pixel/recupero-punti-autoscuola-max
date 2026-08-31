@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Autoscuola Max — Recupero Punti</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="app" id="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brandmark">M</div>
+      <div class="brandtext"><strong>AUTOSCUOLA MAX</strong><span>Recupero punti interattivo</span></div>
+    </div>
+    <div class="crumb" id="crumb">Home · Corso da 12 ore</div>
+    <div class="spacer"></div>
+    <div class="modebadge" id="modeBadge">Modalità docente</div>
+    <button class="iconbtn teacher-only" id="openAudience" title="Apri una seconda finestra pulita per il televisore">Apri schermo aula ↗</button>
+    <button class="iconbtn teacher-only" id="goHome" title="Torna alla home">Home</button>
+  </header>
+
+  <main class="main">
+    <section class="stage">
+      <article class="slide" id="slide"></article>
+    </section>
+
+    <aside class="sidebar teacher-only">
+      <div class="side-scroll">
+        <div class="side-title">Regia docente</div>
+        <div class="teacher-card">
+          <strong>Timer lezione</strong>
+          <div class="timer" id="timer">60:00</div>
+          <div class="timer-actions">
+            <button id="timerStart">Avvia</button><button id="timerPause">Pausa</button><button id="timerReset">Reset</button>
+          </div>
+          <div class="mini">Solo come riferimento didattico: non sostituisce la registrazione ufficiale della frequenza.</div>
+        </div>
+        <div class="teacher-card" id="teacherNotes"></div>
+        <div class="side-title">Scaletta ora 1</div>
+        <div class="slide-list" id="slideList"></div>
+      </div>
+      <div class="side-footer">
+        <button class="side-action" id="revealBtn">Mostra soluzione / contenuto</button>
+        <button class="side-action" id="resetInteraction">Reset interazione schermata</button>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="bottom teacher-only">
+    <button class="navbtn" id="prevBtn">← Indietro</button>
+    <div class="progress-wrap"><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><div class="progress-label" id="progressLabel"></div></div>
+    <button class="navbtn primary" id="nextBtn">Avanti →</button>
+  </footer>
+</div>
+<div class="toast" id="toast"></div>
+<script src="image-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
