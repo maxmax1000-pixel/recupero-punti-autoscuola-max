@@ -107,6 +107,51 @@
   line-height: 1.4;
 }
 
+@media (min-width: 761px) {
+  :global([data-mode="audience"]) .list {
+    min-height: clamp(480px, 66vh, 720px);
+    align-content: center;
+    gap: clamp(16px, 1.8vh, 22px);
+  }
+
+  :global([data-mode="audience"]) .trigger {
+    min-height: clamp(92px, 10.5vh, 112px);
+    grid-template-columns:
+      clamp(60px, 3.8vw, 70px) minmax(0, 1fr)
+      clamp(44px, 2.5vw, 48px);
+  }
+
+  :global([data-mode="audience"]) .iconCircle {
+    width: clamp(60px, 3.8vw, 70px);
+    height: clamp(60px, 3.8vw, 70px);
+  }
+
+  :global([data-mode="audience"]) .speechIcon {
+    width: clamp(32px, 2.1vw, 38px);
+    height: clamp(32px, 2.1vw, 38px);
+  }
+
+  :global([data-mode="audience"]) .statement {
+    font-size: clamp(24px, 1.65vw, 32px);
+  }
+
+  :global([data-mode="audience"]) .indicator {
+    width: clamp(44px, 2.5vw, 48px);
+    height: clamp(44px, 2.5vw, 48px);
+  }
+
+  :global([data-mode="audience"]) .response {
+    padding-top: clamp(18px, 2vh, 22px);
+    padding-bottom: clamp(20px, 2.2vh, 24px);
+  }
+
+  :global([data-mode="audience"]) .response p {
+    font-size: clamp(23px, 1.4vw, 28px);
+    font-weight: 600;
+    line-height: 1.36;
+  }
+}
+
 @media (max-width: 760px) {
   .trigger {
     grid-template-columns: 44px minmax(0, 1fr) 36px;
