@@ -1,10 +1,17 @@
 .frame {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
   min-height: 520px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-large);
   padding: var(--space-6);
   background: linear-gradient(145deg, #18201e, var(--color-panel));
   box-shadow: 0 20px 70px rgba(0, 0, 0, 0.28);
+}
+
+.badgeRow {
+  margin-bottom: var(--space-3);
 }
 
 .eyebrow {
@@ -26,4 +33,10 @@
 
 .body {
   margin-top: var(--space-5);
+}
+
+@media (max-width: 760px) {
+  .frame {
+    padding: var(--space-5);
+  }
 }

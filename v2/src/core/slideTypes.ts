@@ -13,6 +13,7 @@ export interface BaseSlide {
   type: SlideType;
   title: string;
   durationMinutes: number;
+  sectionBadge?: string;
   teacherNotes?: string;
 }
 
@@ -31,6 +32,8 @@ export interface DiscussionSlideData extends BaseSlide {
 export interface ComparisonColumn {
   title: string;
   items: string[];
+  tone?: "neutral" | "danger" | "success";
+  icon?: "car" | "steering-wheel";
 }
 
 export interface ComparisonSlideData extends BaseSlide {
@@ -38,6 +41,7 @@ export interface ComparisonSlideData extends BaseSlide {
   left: ComparisonColumn;
   right: ComparisonColumn;
   conclusion?: string;
+  conclusionEmphasis?: string;
 }
 
 export interface ABCaseSlideData extends BaseSlide {

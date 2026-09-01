@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - codex/recupero-punti-v2-foundation
+      - codex/recupero-punti-v2-pilot-comparison
     paths:
       - "v2/**"
       - ".github/workflows/v2-foundation-ci.yml"
@@ -36,3 +37,10 @@ jobs:
 
       - name: Test E2E
         run: npm run test:e2e
+
+      - name: Upload pilot comparison screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: pilot-comparison-screenshots
+          path: v2/artifacts/pilot-comparison-*.png
+          if-no-files-found: error

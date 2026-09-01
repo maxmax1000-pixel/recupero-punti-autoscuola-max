@@ -43,16 +43,24 @@ export function CourseShell() {
 
   return (
     <div className={styles.shell} data-mode={mode}>
-      <header className={styles.header}>
-        <div>
-          <strong>Recupero Punti V2</strong>
-          <span>{positionLabel}</span>
-        </div>
-        <span className={styles.modeBadge}>{mode}</span>
-      </header>
+      {isTeacher ? (
+        <header className={styles.header}>
+          <div>
+            <strong>Recupero Punti V2</strong>
+            <span>{positionLabel}</span>
+          </div>
+          <span className={styles.modeBadge}>{mode}</span>
+        </header>
+      ) : null}
 
       <main className={isTeacher ? styles.teacherLayout : styles.audienceLayout}>
-        <section className={styles.stage}>
+        <section
+          className={
+            isTeacher
+              ? `${styles.stage} ${styles.teacherStage}`
+              : `${styles.stage} ${styles.audienceStage}`
+          }
+        >
           {errorMessage ? (
             <SlideFrame eyebrow="Errore registry" title="Slide non trovata">
               <p className={styles.errorText}>{errorMessage}</p>
