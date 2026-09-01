@@ -1,0 +1,18 @@
+.layout {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.body {
+  max-width: 900px;
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--font-size-lead);
+  line-height: 1.45;
+}
+
+.image {
+  width: min(680px, 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+}

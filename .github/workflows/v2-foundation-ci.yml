@@ -1,0 +1,38 @@
+name: V2 Foundation CI
+
+on:
+  push:
+    branches:
+      - codex/recupero-punti-v2-foundation
+    paths:
+      - "v2/**"
+      - ".github/workflows/v2-foundation-ci.yml"
+
+jobs:
+  validate-v2:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: v2
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: v2/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Build
+        run: npm run build
+
+      - name: Test E2E
+        run: npm run test:e2e
