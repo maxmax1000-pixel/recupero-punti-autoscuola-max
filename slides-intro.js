@@ -22,7 +22,7 @@ const introSlides=[
       <div style="display:flex;align-items:center;gap:16px;margin-top:26px;font-size:24px;font-weight:750"><span style="font-size:36px;color:var(--accent)">💬</span><span>Dai pure liberamente la tua opinione.</span></div>
     </div>
     <div style="position:relative;overflow:hidden;border-radius:26px;border:1px solid #34413c;min-height:560px;background:#080d0b">
-      <img src="${INTRO_DRIVING_IMG}" alt="Vista notturna della strada dall'abitacolo di un'automobile" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.9) brightness(.78)">
+      <img src="intro-driving.webp" alt="Vista notturna della strada dall'abitacolo di un'automobile" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.9) brightness(.78)">
       <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,12,9,.48),transparent 40%),linear-gradient(0deg,rgba(6,12,9,.32),transparent 45%)"></div>
     </div>
   </div>`
