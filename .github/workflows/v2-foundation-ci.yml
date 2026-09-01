@@ -5,6 +5,7 @@ on:
     branches:
       - codex/recupero-punti-v2-foundation
       - codex/recupero-punti-v2-pilot-comparison
+      - codex/recupero-punti-v2-clickable-statements
     paths:
       - "v2/**"
       - ".github/workflows/v2-foundation-ci.yml"
@@ -46,6 +47,13 @@ jobs:
         with:
           name: pilot-comparison-screenshots
           path: v2/artifacts/pilot-comparison-*.png
+          if-no-files-found: error
+
+      - name: Upload intro03 clickable statements screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: intro03-clickable-statements-screenshots
+          path: v2/artifacts/intro03-*.png
           if-no-files-found: error
 
       - name: Build static preview

@@ -6,6 +6,7 @@ export type SlideType =
   | "ab-case"
   | "free-response"
   | "solution"
+  | "clickable-statements"
   | "image-text";
 
 export interface BaseSlide {
@@ -64,6 +65,17 @@ export interface SolutionSlideData extends BaseSlide {
   legalReference?: string;
 }
 
+export interface ClickableStatementItem {
+  id: string;
+  statement: string;
+  response: string;
+}
+
+export interface ClickableStatementsSlideData extends BaseSlide {
+  type: "clickable-statements";
+  items: readonly ClickableStatementItem[];
+}
+
 export type ImagePosition = "left" | "right" | "background";
 
 export interface ImageTextSlideData extends BaseSlide {
@@ -80,4 +92,5 @@ export type SlideData =
   | ABCaseSlideData
   | FreeResponseSlideData
   | SolutionSlideData
+  | ClickableStatementsSlideData
   | ImageTextSlideData;

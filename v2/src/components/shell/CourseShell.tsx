@@ -1,5 +1,6 @@
 import { SlideFrame } from "../common/SlideFrame";
 import { ABCaseSlide } from "../slides/ABCaseSlide";
+import { ClickableStatementsSlide } from "../slides/ClickableStatementsSlide";
 import { ComparisonSlide } from "../slides/ComparisonSlide";
 import { DiscussionSlide } from "../slides/DiscussionSlide";
 import { FreeResponseSlide } from "../slides/FreeResponseSlide";
@@ -21,6 +22,8 @@ function renderSlide(slide: SlideData) {
       return <FreeResponseSlide slide={slide} />;
     case "solution":
       return <SolutionSlide slide={slide} />;
+    case "clickable-statements":
+      return <ClickableStatementsSlide slide={slide} />;
     case "image-text":
       return <ImageTextSlide slide={slide} />;
   }
