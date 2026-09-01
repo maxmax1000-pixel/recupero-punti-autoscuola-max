@@ -44,3 +44,13 @@ jobs:
           name: pilot-comparison-screenshots
           path: v2/artifacts/pilot-comparison-*.png
           if-no-files-found: error
+
+      - name: Build static preview
+        run: npx vite build --base=./ --outDir dist-publish --emptyOutDir
+
+      - name: Upload static preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: v2-preview-dist
+          path: v2/dist-publish/**
+          if-no-files-found: error
