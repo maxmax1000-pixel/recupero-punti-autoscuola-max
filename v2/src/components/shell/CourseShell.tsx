@@ -5,6 +5,7 @@ import { ComparisonSlide } from "../slides/ComparisonSlide";
 import { DiscussionSlide } from "../slides/DiscussionSlide";
 import { FreeResponseSlide } from "../slides/FreeResponseSlide";
 import { ImageTextSlide } from "../slides/ImageTextSlide";
+import { RevealQuestionSlide } from "../slides/RevealQuestionSlide";
 import { SolutionSlide } from "../slides/SolutionSlide";
 import { useCourseController } from "../../state/CourseController";
 import type { SlideData } from "../../core/slideTypes";
@@ -24,6 +25,8 @@ function renderSlide(slide: SlideData) {
       return <SolutionSlide slide={slide} />;
     case "clickable-statements":
       return <ClickableStatementsSlide slide={slide} />;
+    case "reveal-question":
+      return <RevealQuestionSlide slide={slide} />;
     case "image-text":
       return <ImageTextSlide slide={slide} />;
   }

@@ -56,6 +56,13 @@ jobs:
           path: v2/artifacts/intro03-*.png
           if-no-files-found: error
 
+      - name: Upload intro04 reveal question screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: intro04-reveal-question-screenshots
+          path: v2/artifacts/intro04-*.png
+          if-no-files-found: error
+
       - name: Build static preview
         run: npx vite build --base=./ --outDir dist-publish --emptyOutDir
 

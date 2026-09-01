@@ -7,6 +7,7 @@ export type SlideType =
   | "free-response"
   | "solution"
   | "clickable-statements"
+  | "reveal-question"
   | "image-text";
 
 export interface BaseSlide {
@@ -76,6 +77,13 @@ export interface ClickableStatementsSlideData extends BaseSlide {
   items: readonly ClickableStatementItem[];
 }
 
+export interface RevealQuestionSlideData extends BaseSlide {
+  type: "reveal-question";
+  question: string;
+  answer: string;
+  bridge?: string;
+}
+
 export type ImagePosition = "left" | "right" | "background";
 
 export interface ImageTextSlideData extends BaseSlide {
@@ -93,4 +101,5 @@ export type SlideData =
   | FreeResponseSlideData
   | SolutionSlideData
   | ClickableStatementsSlideData
+  | RevealQuestionSlideData
   | ImageTextSlideData;

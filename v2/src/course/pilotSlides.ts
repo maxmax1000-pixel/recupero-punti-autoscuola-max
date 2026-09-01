@@ -65,9 +65,21 @@ export const pilotSlides: readonly SlideData[] = [
       },
     ],
   },
+  {
+    id: "g1-intro-04-mettiamoci-alla-prova",
+    type: "reveal-question",
+    title: "Mettiamoci alla prova",
+    durationMinutes: 4,
+    question:
+      "Il rispetto delle Norme del Codice della Strada è sempre subordinato alla presenza della segnaletica?",
+    answer:
+      "NO, esistono delle regole generali che dobbiamo conoscere e per le quali non è prevista la presenza dei segnali.",
+    bridge: "Da qui iniziamo a parlare proprio di queste regole generali.",
+  },
 ];
 
 export const pilotLessonOrder: readonly SlideId[] = [
   "g1-intro-02-differenza",
   "g1-intro-03-frasi-che-sentiamo",
+  "g1-intro-04-mettiamoci-alla-prova",
 ];
