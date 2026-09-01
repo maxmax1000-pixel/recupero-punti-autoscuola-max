@@ -25,15 +25,15 @@ V2 intro 3 diretta:
 https://maxmax1000-pixel.github.io/recupero-punti-autoscuola-max/v2-preview/?deck=pilot&mode=audience&slide=g1-intro-03-frasi-che-sentiamo
 
 ## 3. Main e pubblicazione
-Main dopo l’ultima pubblicazione V2:
-`d6043954b44c125dce391bd64797517dcd89fbd2`
+Main applicativo dopo la sincronizzazione legacy intro 3:
+`6419d24c2106fb68a64a81be3ca2850b10cacd75`
 
-Commit main:
-`Pubblica anteprima V2 intro 3`
+Commit:
+`Collega sync legacy intro 3`
 
-La pubblicazione ha modificato solo `v2-preview/**`; il programma legacy alla radice non è stato modificato da questa pubblicazione.
+Questo pacchetto ha aggiunto le tre Fonti di progetto, `intro-slide3-clickable.js` e una sola riga di collegamento in `index.html`. Le altre 19 schermate legacy e il motore non sono stati modificati.
 
-GitHub Pages relativo al commit sopra: SUCCESS.
+GitHub Pages relativo al commit applicativo sopra: SUCCESS. Un eventuale commit successivo di solo `PROJECT_STATUS.md` è documentale e non modifica il programma.
 
 ## 4. Branch V2 corrente
 Branch di lavoro più recente:
@@ -154,16 +154,20 @@ Stato V2: NON ANCORA MIGRATA COME SLIDE REALE V2.
 ## 10. Programma legacy
 Il legacy contiene 20 schermate ed è attualmente il programma completo usato per valutare il flusso complessivo.
 
-La slide 5 del legacy “Le frasi che sentiamo più spesso” è ANCORA la vecchia versione statica al momento della stesura iniziale di questo file.
+La slide 5 legacy “Le frasi che sentiamo più spesso” è SINCRONIZZATA con la versione approvata a 3 frasi cliccabili.
 
-PROSSIMO INTERVENTO OPERATIVO IMMEDIATO:
-SINCRONIZZARE la slide 5 legacy con la nuova versione approvata a 3 frasi cliccabili, lasciando inalterate le altre 19 schermate e tutta la regia/navigazione/timer.
+Implementazione legacy:
+- file `intro-slide3-clickable.js`;
+- collegamento in `index.html` dopo `intro-slide2-v2.js`;
+- usa `state.caseSelection`, già sincronizzato con lo schermo aula;
+- click sullo stesso item richiude la risposta;
+- cambio slide / reset interazione azzerano lo stato tramite il motore esistente;
+- nessuna modifica a `app-core.js` o `app-runtime.js`.
 
-Dopo il deploy:
-- verificare manualmente che il programma completo parta e navighi normalmente;
-- verificare che la slide 5 mostri esattamente i 3 statement nuovi;
-- verificare apertura/chiusura delle risposte;
-- verificare che le slide precedenti e successive siano invariate.
+Stato deploy: GitHub Pages SUCCESS.
+
+PROSSIMO INTERVENTO OPERATIVO:
+Aprire il programma completo dall’inizio e valutare fluidità e ritmo del blocco introduttivo con la slide 5 aggiornata. Raccogliere eventuali correzioni prima di scegliere la prossima slide da migrare in V2.
 
 ## 11. Contenuti tecnici legacy già presenti
 Sono già stati costruiti diversi casi tecnici (semafori, pedoni, giallo lampeggiante, intersezioni regolate/non regolate, lanterne rosse lampeggianti, corsie reversibili). La migrazione V2 di questi casi non è ancora il focus immediato.
@@ -192,9 +196,15 @@ Tutti i casi tecnici devono riportare riferimenti normativi attuali quando vengo
 - Output Codex richiesto in unico blocco `text`.
 - In Terminale/UI: una sola azione per volta.
 
-## 14. Prossimi passi dopo la sync legacy intro 3
+## 14. Prossimi passi
 Ordine suggerito:
 1. verificare il flusso completo dall’inizio con la slide 5 aggiornata;
 2. raccogliere eventuali correzioni di fluidità del blocco introduttivo;
 3. decidere se migrare in V2 l’intro 1 (`1 di 3`) oppure procedere alla prima slide/caso successivo da rendere V2;
 4. continuare ciclo: V2 → screenshot/CI → approvazione → pubblicazione V2 → sincronizzazione legacy completa.
+
+## 15. Fonti persistenti
+Le tre Fonti sono salvate nella Libreria ChatGPT, cartella `/RECUPERO PUNTI AUTOSCUOLA MAX`, e hanno una copia nel repository:
+- `00_CHATGPT_START_HERE.md`
+- `01_CODEX_START_HERE.md`
+- `PROJECT_STATUS.md`
