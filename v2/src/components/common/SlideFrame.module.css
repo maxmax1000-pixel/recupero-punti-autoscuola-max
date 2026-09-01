@@ -35,6 +35,18 @@
   margin-top: var(--space-5);
 }
 
+:global([data-mode="audience"]) .frame {
+  width: 100%;
+  max-width: none;
+  min-height: calc(100vh - 24px);
+  margin: 0;
+}
+
+:global([data-mode="audience"]) .title {
+  max-width: none;
+  font-size: clamp(52px, 4.2vw, 78px);
+}
+
 @media (max-width: 760px) {
   .frame {
     padding: var(--space-5);

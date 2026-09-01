@@ -50,6 +50,39 @@ async function expectNoHorizontalOverflow(page: Page) {
   expect(hasNoOverflow).toBe(true);
 }
 
+async function expectNoVerticalOverflow(page: Page) {
+  const hasNoOverflow = await page.evaluate(
+    () => document.documentElement.scrollHeight <= window.innerHeight,
+  );
+
+  expect(hasNoOverflow).toBe(true);
+}
+
+async function expectAudienceFrameFillsViewport(
+  page: Page,
+  viewport: { height: number; width: number },
+) {
+  const frame = await page.locator("article").evaluate((element) => {
+    const box = element.getBoundingClientRect();
+
+    return {
+      bottomMargin: window.innerHeight - box.bottom,
+      height: box.height,
+      leftMargin: box.left,
+      rightMargin: window.innerWidth - box.right,
+      topMargin: box.top,
+      width: box.width,
+    };
+  });
+
+  expect(frame.width).toBeGreaterThanOrEqual(viewport.width * 0.96);
+  expect(frame.height).toBeGreaterThanOrEqual(viewport.height * 0.94);
+  expect(frame.leftMargin).toBeLessThanOrEqual(32);
+  expect(frame.topMargin).toBeLessThanOrEqual(32);
+  expect(frame.rightMargin).toBeLessThanOrEqual(32);
+  expect(frame.bottomMargin).toBeLessThanOrEqual(32);
+}
+
 async function expectSelectorInsideViewport(page: Page, selector: string) {
   const isInsideViewport = await page.locator(selector).evaluate((element) => {
     const box = element.getBoundingClientRect();
@@ -134,6 +167,8 @@ test("PILOT TEST 1 - slide pilota 1600x900", async ({ page }) => {
   await expect(page.getByText("audience")).toHaveCount(0);
   await expectNoRuntimeErrors(errors);
   await expectNoHorizontalOverflow(page);
+  await expectNoVerticalOverflow(page);
+  await expectAudienceFrameFillsViewport(page, { width: 1600, height: 900 });
   await expectSelectorInsideViewport(page, "main");
   await expectSelectorInsideViewport(page, "article");
 
@@ -148,6 +183,8 @@ test("PILOT TEST 2 - slide pilota 1920x1080", async ({ page }) => {
 
   await expectNoRuntimeErrors(errors);
   await expectNoHorizontalOverflow(page);
+  await expectNoVerticalOverflow(page);
+  await expectAudienceFrameFillsViewport(page, { width: 1920, height: 1080 });
   await expectSelectorInsideViewport(page, '[data-testid="comparison-left-card"]');
   await expectSelectorInsideViewport(page, '[data-testid="comparison-right-card"]');
   await expectSelectorInsideViewport(page, '[data-testid="comparison-conclusion"]');
