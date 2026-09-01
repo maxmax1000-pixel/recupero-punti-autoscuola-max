@@ -7,7 +7,7 @@ slides.push(
     <div class="case-question">Come funziona il semaforo per corsie reversibili?</div>
     <div class="case-instruction">Osserva la scena e rispondi liberamente. La soluzione compare solo dopo aver premuto il tasto.</div>
     <div class="case-media" style="display:flex;justify-content:center">
-      <img src="reversibili-scene-approved.webp" alt="Funzionamento reale delle corsie reversibili con X rossa, freccia gialla obliqua verso destra e freccia verde" style="display:block;width:min(1180px,100%);height:auto;max-height:430px;object-fit:contain;border-radius:20px;box-shadow:0 16px 42px rgba(0,0,0,.22)">
+      <img src="${REVERSIBILI_SCENE}" alt="Funzionamento reale delle corsie reversibili con X rossa, freccia gialla obliqua verso destra e freccia verde" style="display:block;width:min(1180px,100%);height:auto;max-height:430px;object-fit:contain;border-radius:20px;box-shadow:0 16px 42px rgba(0,0,0,.22)">
     </div>
     <div class="case-reveal-row"><button class="case-reveal-btn" data-case-reveal ${state.revealed?'disabled':''}><span class="case-reveal-icon">✓</span>${state.revealed?'Soluzione mostrata':'Mostra soluzione'}</button></div>
     <div class="case-solution ${state.revealed?'visible':''}" id="reveal">
