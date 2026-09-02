@@ -137,14 +137,14 @@ for (const viewport of [
     await renderLegacySlide(page, "C’hai mai fatto caso?");
     await expectFullyInsideTeacherFrame(page);
     await page.screenshot({
-      path: `artifacts/legacy-teacher-fit-osservazione-${viewport.label}.png`,
+      path: `artifacts/viewport-fit-legacy-teacher-osservazione-${viewport.label}.png`,
     });
 
     // Verifica anche il cambio slide nello stesso contenitore persistente della regia docente.
     await renderLegacySlide(page, "Il senso civico alla guida: questo sconosciuto");
     await expectFullyInsideTeacherFrame(page);
     await page.screenshot({
-      path: `artifacts/legacy-teacher-fit-senso-civico-${viewport.label}.png`,
+      path: `artifacts/viewport-fit-legacy-teacher-senso-civico-${viewport.label}.png`,
     });
   });
 }
