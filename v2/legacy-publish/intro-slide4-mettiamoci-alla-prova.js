@@ -1,10 +1,16 @@
 // Sync legacy della slide V2 approvata "Mettiamoci alla prova".
-// Inserimento vincolante subito dopo "C’hai mai fatto caso?".
+// Inserimento vincolante dopo il blocco sul senso civico.
 (() => {
   const title = 'Mettiamoci alla prova';
   if (slides.some(s => s.title === title)) return;
 
-  let afterIndex = slides.findIndex(s => s.title === 'C’hai mai fatto caso?');
+  let afterIndex = slides.findIndex(s => s.title === 'Il problema vero non sei solo tu');
+  if (afterIndex < 0) {
+    afterIndex = slides.findIndex(s => s.title === 'Il senso civico alla guida: questo sconosciuto');
+  }
+  if (afterIndex < 0) {
+    afterIndex = slides.findIndex(s => s.title === 'C’hai mai fatto caso?');
+  }
   if (afterIndex < 0) {
     afterIndex = slides.findIndex(s => s.title === 'Le frasi che sentiamo più spesso');
   }
