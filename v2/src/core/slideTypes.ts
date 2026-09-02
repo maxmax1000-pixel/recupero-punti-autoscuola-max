@@ -9,6 +9,8 @@ export type SlideType =
   | "clickable-statements"
   | "reveal-question"
   | "observation"
+  | "message-cards"
+  | "progressive-reveal"
   | "image-text";
 
 export interface BaseSlide {
@@ -104,6 +106,26 @@ export interface ObservationSlideData extends BaseSlide {
   conclusionBody: string;
 }
 
+export interface MessageCardItem {
+  id: string;
+  title: string;
+  body: string;
+}
+
+export interface MessageCardsSlideData extends BaseSlide {
+  type: "message-cards";
+  intro: string;
+  items: readonly MessageCardItem[];
+  conclusion: string;
+}
+
+export interface ProgressiveRevealSlideData extends BaseSlide {
+  type: "progressive-reveal";
+  intro: string;
+  items: readonly MessageCardItem[];
+  conclusion: string;
+}
+
 export type ImagePosition = "left" | "right" | "background";
 
 export interface ImageTextSlideData extends BaseSlide {
@@ -123,4 +145,6 @@ export type SlideData =
   | ClickableStatementsSlideData
   | RevealQuestionSlideData
   | ObservationSlideData
+  | MessageCardsSlideData
+  | ProgressiveRevealSlideData
   | ImageTextSlideData;
