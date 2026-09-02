@@ -1,0 +1,166 @@
+.root {
+  width: 100%;
+}
+
+.root h1 {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.content {
+  display: grid;
+  gap: clamp(12px, 1.4vh, 16px);
+}
+
+.introCard,
+.messageCard,
+.conclusionCard {
+  border-radius: 18px;
+  background: rgba(8, 18, 13, 0.78);
+}
+
+.introCard {
+  padding: clamp(16px, 1.8vh, 22px) clamp(28px, 3vw, 46px);
+  border: 1px solid rgba(85, 216, 135, 0.5);
+  text-align: center;
+}
+
+.introCard p {
+  max-width: 1120px;
+  margin: 0 auto;
+  font-size: clamp(21px, 1.55vw, 29px);
+  font-weight: 720;
+  line-height: 1.28;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 1.2vw, 18px);
+}
+
+.messageCard {
+  display: grid;
+  grid-template-columns: clamp(42px, 3.5vw, 56px) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(14px, 1.35vw, 20px);
+  min-height: clamp(128px, 15vh, 154px);
+  padding: clamp(18px, 2vh, 24px) clamp(22px, 2.2vw, 32px);
+  border: 1px solid rgba(85, 216, 135, 0.38);
+}
+
+.numberBadge {
+  display: grid;
+  width: clamp(40px, 3.3vw, 54px);
+  height: clamp(40px, 3.3vw, 54px);
+  place-items: center;
+  border: 1px solid rgba(85, 216, 135, 0.7);
+  border-radius: 999px;
+  background: rgba(85, 216, 135, 0.08);
+  color: var(--color-accent);
+  font-size: clamp(18px, 1.4vw, 24px);
+  font-weight: 900;
+}
+
+.messageCard h2 {
+  margin: 0 0 8px;
+  color: var(--color-accent);
+  font-size: clamp(20px, 1.45vw, 27px);
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.messageCard p {
+  margin: 0;
+  font-size: clamp(18px, 1.25vw, 23px);
+  font-weight: 620;
+  line-height: 1.3;
+}
+
+.conclusionCard {
+  padding: clamp(18px, 2vh, 24px) clamp(30px, 3vw, 48px);
+  border: 2px solid rgba(85, 216, 135, 0.9);
+  background: linear-gradient(115deg, rgba(16, 51, 30, 0.72), rgba(7, 17, 12, 0.9));
+  text-align: center;
+}
+
+.conclusionCard p {
+  max-width: 1160px;
+  margin: 0 auto;
+  color: var(--color-text);
+  font-size: clamp(22px, 1.65vw, 31px);
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+:global([data-mode="audience"]) .root h1 {
+  font-size: clamp(54px, 4.4vw, 80px);
+}
+
+@media (max-height: 900px) and (min-width: 901px) {
+  :global([data-mode="audience"]) .root h1 {
+    font-size: clamp(44px, 3.55vw, 60px);
+  }
+
+  :global([data-mode="audience"]) .root h1 + div {
+    margin-top: 14px;
+  }
+
+  :global([data-mode="audience"]) .content {
+    gap: 10px;
+  }
+
+  :global([data-mode="audience"]) .introCard {
+    padding: 12px 30px;
+  }
+
+  :global([data-mode="audience"]) .introCard p {
+    font-size: clamp(18px, 1.3vw, 24px);
+    line-height: 1.2;
+  }
+
+  :global([data-mode="audience"]) .grid {
+    gap: 10px 14px;
+  }
+
+  :global([data-mode="audience"]) .messageCard {
+    min-height: 108px;
+    gap: 14px;
+    padding: 13px 20px;
+  }
+
+  :global([data-mode="audience"]) .numberBadge {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  :global([data-mode="audience"]) .messageCard h2 {
+    margin-bottom: 5px;
+    font-size: clamp(18px, 1.15vw, 22px);
+  }
+
+  :global([data-mode="audience"]) .messageCard p {
+    font-size: clamp(16px, 1vw, 19px);
+    line-height: 1.22;
+  }
+
+  :global([data-mode="audience"]) .conclusionCard {
+    padding: 13px 26px;
+  }
+
+  :global([data-mode="audience"]) .conclusionCard p {
+    font-size: clamp(19px, 1.35vw, 24px);
+    line-height: 1.18;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .messageCard {
+    min-height: 0;
+  }
+}
