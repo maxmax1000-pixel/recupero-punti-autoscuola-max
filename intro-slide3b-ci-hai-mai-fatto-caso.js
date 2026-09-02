@@ -1,7 +1,7 @@
-// Sync legacy della slide V2 approvata "C’hai mai fatto caso?".
+// Sync legacy della slide V2 approvata "Hai mai notato questa cosa?".
 // Inserimento chirurgico subito dopo "Le frasi che sentiamo più spesso" e prima di "Mettiamoci alla prova".
 (() => {
-  const title = 'C’hai mai fatto caso?';
+  const title = 'Hai mai notato questa cosa?';
   if (slides.some(s => s.title === title)) return;
 
   const afterIndex = slides.findIndex(s => s.title === 'Le frasi che sentiamo più spesso');
@@ -14,17 +14,17 @@
     html: () => `
       <div style="max-width:1240px;margin:0 auto;padding-top:0">
         <div style="display:flex;justify-content:flex-start;margin-bottom:6px"><div style="display:inline-flex;padding:8px 14px;border:1px solid #356b49;border-radius:14px;background:rgba(85,216,135,.08);font-weight:900;color:#baf5cc">4 di 4</div></div>
-        <h1 style="font-size:clamp(48px,4.4vw,72px);line-height:1.02;margin:0 0 22px;text-align:center">C’hai mai fatto caso?</h1>
+        <h1 style="font-size:clamp(48px,4.4vw,72px);line-height:1.02;margin:0 0 22px;text-align:center">Hai mai notato questa cosa?</h1>
 
         <div style="display:grid;gap:14px">
           <div style="display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:center;border:1px solid #356b49;border-radius:20px;background:#0d1411;padding:20px 28px">
             <span aria-hidden="true" style="width:64px;height:64px;border:1px solid #55d787;border-radius:50%;display:grid;place-items:center;background:rgba(85,216,135,.06);font-size:30px">💬</span>
-            <div style="font-size:clamp(23px,1.55vw,30px);font-weight:800;line-height:1.28">Se trovi qualcuno davanti a te che viaggia a una velocità inferiore alla tua, il pensiero è: <strong>“Ma guarda sto rincogl...o, svegliati!”</strong></div>
+            <div style="font-size:clamp(23px,1.55vw,30px);font-weight:800;line-height:1.28">Se trovi qualcuno davanti a te che viaggia a una velocità inferiore alla tua, il pensiero è: <strong>“Ma guarda questo qui... svegliati!”</strong></div>
           </div>
 
           <div style="display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:center;border:1px solid #356b49;border-radius:20px;background:#0d1411;padding:20px 28px">
             <span aria-hidden="true" style="width:64px;height:64px;border:1px solid #55d787;border-radius:50%;display:grid;place-items:center;background:rgba(85,216,135,.06);font-size:30px">💬</span>
-            <div style="font-size:clamp(23px,1.55vw,30px);font-weight:800;line-height:1.28">Se invece trovi un utente che ti sorpassa, il pensiero diventa: <strong>“Ma dove va sto cogl...e così di corsa?”</strong></div>
+            <div style="font-size:clamp(23px,1.55vw,30px);font-weight:800;line-height:1.28">Se invece trovi un utente che ti sorpassa, il pensiero diventa: <strong>“Ma dove corre questo? Che fretta ha?”</strong></div>
           </div>
 
           <div style="border:1px solid #47754f;border-radius:18px;background:rgba(18,32,23,.72);padding:18px 26px 18px 40px;position:relative;font-size:clamp(21px,1.35vw,27px);line-height:1.3">

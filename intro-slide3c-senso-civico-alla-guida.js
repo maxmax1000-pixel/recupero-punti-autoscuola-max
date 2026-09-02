@@ -1,10 +1,10 @@
 // Sync legacy della slide V2 approvata "Il senso civico alla guida: questo sconosciuto".
-// Inserimento vincolante subito dopo "C’hai mai fatto caso?".
+// Inserimento vincolante subito dopo "Hai mai notato questa cosa?".
 (() => {
   const title = 'Il senso civico alla guida: questo sconosciuto';
   if (slides.some(s => s.title === title)) return;
 
-  const afterIndex = slides.findIndex(s => s.title === 'C’hai mai fatto caso?');
+  const afterIndex = slides.findIndex(s => s.title === 'Hai mai notato questa cosa?');
   if (afterIndex < 0) return;
 
   const items = [
