@@ -6,6 +6,8 @@ interface ObservationSlideProps {
   slide: ObservationSlideData;
 }
 
+const factorJoiners = ["", "della", "delle", "e della"] as const;
+
 export function ObservationSlide({ slide }: ObservationSlideProps) {
   return (
     <div className={styles.root} data-testid="observation-slide">
@@ -33,15 +35,19 @@ export function ObservationSlide({ slide }: ObservationSlideProps) {
             <span aria-hidden="true" className={styles.questionIcon}>?</span>
             <div className={styles.questionText}>
               <strong>{slide.questionLead}</strong>
-              {slide.factors.map((factor, index) => (
-                <span key={factor.label} className={styles.factorGroup}>
-                  {index === 0 ? null : <span className={styles.joiner}>della</span>}
-                  <span className={styles.factorChip}>
-                    <span aria-hidden="true">{factor.icon}</span>
-                    {factor.label}
+              {slide.factors.map((factor, index) => {
+                const joiner = factorJoiners[index] ?? "della";
+
+                return (
+                  <span key={factor.label} className={styles.factorGroup}>
+                    {joiner ? <span className={styles.joiner}>{joiner}</span> : null}
+                    <span className={styles.factorChip}>
+                      <span aria-hidden="true">{factor.icon}</span>
+                      {factor.label}
+                    </span>
                   </span>
-                </span>
-              ))}
+                );
+              })}
               <strong>?</strong>
             </div>
           </section>
