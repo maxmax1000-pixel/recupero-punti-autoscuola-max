@@ -93,6 +93,69 @@ export const pilotSlides: readonly SlideData[] = [
       "Semplicemente fanno anch’esse parte delle differenze che passano tra l’essere un vero autista o un semplice portatore sano di veicoli.",
   },
   {
+    id: "g1-intro-03c-senso-civico-alla-guida",
+    type: "message-cards",
+    title: "Il senso civico alla guida: questo sconosciuto",
+    durationMinutes: 5,
+    teacherNotes:
+      "Usa questa slide per spostare il ragionamento dalla sola abilità tecnica al rispetto degli altri. Non leggerla come una predica: fai esempi concreti di utenti incerti, lenti, inesperti o semplicemente diversi da noi. Il concetto centrale è che strada, corsia, tempo e urgenze non appartengono a un singolo conducente.",
+    intro:
+      "Avere rispetto degli altri utenti, delle loro incertezze e delle loro difficoltà dovrebbe far parte dello stile di guida di ognuno.",
+    items: [
+      {
+        id: "strada-non-solo-tua",
+        title: "LA STRADA NON È SOLO TUA",
+        body: "La corsia non è tua. La carreggiata non è tua. Non puoi pretendere che tutti si adattino a te.",
+      },
+      {
+        id: "urgenze-non-piu-importanti",
+        title: "LE TUE URGENZE NON VALGONO PIÙ DI QUELLE DEGLI ALTRI",
+        body: "Essere di fretta non ti autorizza a correre, incalzare o mettere pressione a chi ti sta davanti.",
+      },
+      {
+        id: "guidare-non-rispondere",
+        title: "GUIDARE NON SIGNIFICA RISPONDERE AL TELEFONO",
+        body: "Telefonate, vocali e messaggi possono aspettare. Oggi la tecnologia offre alternative. Distrarsi, invece, è una scelta.",
+      },
+      {
+        id: "sicurezza-non-arroganza",
+        title: "ESSERE SICURI NON SIGNIFICA ESSERE ARROGANTI",
+        body: "Sentirsi bravi alla guida non autorizza a trattare gli altri come ostacoli o incapaci.",
+      },
+    ],
+    conclusion:
+      "Il senso civico fa parte della differenza tra l’essere un vero autista o un semplice portatore sano di veicoli.",
+  },
+  {
+    id: "g1-intro-03d-il-problema-vero-non-sei-solo-tu",
+    type: "progressive-reveal",
+    title: "Il problema vero non sei solo tu",
+    durationMinutes: 5,
+    teacherNotes:
+      "Il testo iniziale resta visibile. Rivela i tre riquadri uno alla volta e lascia qualche secondo tra un passaggio e l’altro. I contenuti già aperti devono restare visibili. Chiudi soltanto alla fine con la frase sulla vita di una persona e di una famiglia: è il punto più importante della slide.",
+    intro:
+      "Molti sono convinti che gli incidenti capitino sempre agli altri e che, se anche dovesse accadere qualcosa, il problema riguardi solo loro.",
+    items: [
+      {
+        id: "non-decidi-solo-per-te",
+        title: "NON DECIDI SOLO PER TE",
+        body: "Quando guidi con arroganza, distrazione o presunzione, imponi un rischio anche a chi non lo ha scelto.",
+      },
+      {
+        id: "puoi-rovinare-vite-altrui",
+        title: "PUOI ROVINARE VITE ALTRUI",
+        body: "Un pedone, un ciclista, una famiglia, un ragazzo in scooter: basta un attimo per cambiare tutto.",
+      },
+      {
+        id: "egoismo-va-eliminato",
+        title: "QUESTO EGOISMO VA ELIMINATO",
+        body: "Sulla strada non conta fare il fenomeno. Conta non costringere gli altri a pagare per i tuoi errori.",
+      },
+    ],
+    conclusion:
+      "Un comportamento irresponsabile può cambiare la vita di una persona, di una famiglia, per sempre.",
+  },
+  {
     id: "g1-intro-04-mettiamoci-alla-prova",
     type: "reveal-question",
     title: "Mettiamoci alla prova",
@@ -109,5 +172,7 @@ export const pilotLessonOrder: readonly SlideId[] = [
   "g1-intro-02-differenza",
   "g1-intro-03-frasi-che-sentiamo",
   "g1-intro-03b-ci-hai-mai-fatto-caso",
+  "g1-intro-03c-senso-civico-alla-guida",
+  "g1-intro-03d-il-problema-vero-non-sei-solo-tu",
   "g1-intro-04-mettiamoci-alla-prova",
 ];
