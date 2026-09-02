@@ -58,6 +58,14 @@ Ogni prompt destinato a Codex deve essere fornito in un solo blocco copiabile/in
 ## 8. Regole UI/guida tecnica
 Quando occorre guidare l’utente in Terminale o in interfacce tecniche: una sola azione per volta, poi attendere il risultato/screenshot. Non dare sequenze lunghe di passaggi contemporaneamente.
 
+## 8 bis. Regola di impaginazione — EQUILIBRIO VISIVO
+- Non allineare automaticamente tutto a sinistra. Valutare sempre l’equilibrio dell’intera slide e l’uso dello spazio libero.
+- Titoli brevi, autonomi e di forte impatto possono e spesso devono essere centrati quando l’allineamento a sinistra lascia molto spazio vuoto a destra.
+- Messaggi conclusivi, callout e frasi-sintesi brevi possono essere centrati dentro il loro riquadro, soprattutto se il contenuto occupa poche righe e rimane molto spazio inutilizzato su un lato.
+- Testi narrativi o più lunghi restano normalmente allineati a sinistra, perché così sono più leggibili.
+- La regola non è “centrare tutto”, ma evitare composizioni sbilanciate: ogni elemento importante deve occupare lo spazio in modo intenzionale e visivamente equilibrato.
+- Prima di approvare una slide, controllare espressamente: spazio vuoto a destra/sinistra, centratura dei titoli brevi, equilibrio dei riquadri finali e distribuzione complessiva nel formato 16:9.
+
 ## 9. URL principali
 Programma completo legacy:
 `https://maxmax1000-pixel.github.io/recupero-punti-autoscuola-max/`
