@@ -84,6 +84,13 @@ jobs:
           path: v2/artifacts/prevenzione-urgenza-*.png
           if-no-files-found: error
 
+      - name: Upload viewport fit screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: viewport-fit-screenshots
+          path: v2/artifacts/viewport-fit-*.png
+          if-no-files-found: error
+
       - name: Build static preview
         run: npx vite build --base=./ --outDir dist-publish --emptyOutDir
 
