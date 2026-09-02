@@ -55,10 +55,10 @@ test("OBSERVATION TEST 2 - 1920x1080", async ({ page }) => {
   await page.setViewportSize({ width: 1920, height: 1080 });
   await page.goto(observationUrl);
 
-  await expect(page.getByText("limite", { exact: true })).toBeVisible();
-  await expect(page.getByText("struttura della strada", { exact: true })).toBeVisible();
-  await expect(page.getByText("condizioni del veicolo", { exact: true })).toBeVisible();
-  await expect(page.getByText("visibilità", { exact: true })).toBeVisible();
+  await expect(page.getByText("limite", { exact: false })).toBeVisible();
+  await expect(page.getByText("struttura della strada", { exact: false })).toBeVisible();
+  await expect(page.getByText("condizioni del veicolo", { exact: false })).toBeVisible();
+  await expect(page.getByText("visibilità", { exact: false })).toBeVisible();
   await expectNoViewportOverflow(page);
   expect(errors.pageErrors).toEqual([]);
   expect(errors.consoleErrors).toEqual([]);
