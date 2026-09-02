@@ -39,7 +39,7 @@ Ogni slide reale aggiunta a `pilotLessonOrder` DEVE avere, nello stesso lavoro:
 
 Non modificare direttamente i file legacy alla radice durante lo sviluppo V2. La copia alla radice viene eseguita automaticamente solo al momento della pubblicazione approvata.
 
-Il controllo `node scripts/validate-legacy-publish.mjs` deve passare. Se una slide V2 non ha la propria copia per il programma completo, la pubblicazione deve bloccarsi.
+Il controllo `node scripts/validate-legacy-publish.mjs` deve passare. Se una slide V2 non ha la propria copia per il programma completo, la pubblicazione deve bloccarsi. Inoltre l’ordine delle voci nel manifest deve coincidere esattamente con `pilotLessonOrder`: una differenza di ordine deve bloccare la pubblicazione.
 
 ## 6. Pubblicazione unica
 Non modificare `main` e non pubblicare senza approvazione esplicita dell’utente.
@@ -62,15 +62,22 @@ Il pilot deck contiene:
 - `g1-intro-02-differenza`;
 - `g1-intro-03-frasi-che-sentiamo`;
 - `g1-intro-03b-ci-hai-mai-fatto-caso`;
+- `g1-intro-03c-senso-civico-alla-guida`;
+- `g1-intro-03d-il-problema-vero-non-sei-solo-tu`;
 - `g1-intro-04-mettiamoci-alla-prova`.
 
-La suite corrente comprende 20 test Playwright.
+Le due slide sul senso civico sono APPROVATE, TESTATE, PUBBLICATE V2 e sincronizzate nel programma completo.
+La suite corrente comprende anche i test dedicati a `message-cards` e `progressive-reveal`.
 
 ## 8. Template V2 rilevanti
 - `ComparisonSlide`;
 - `ClickableStatementsSlide`;
 - `RevealQuestionSlide`;
-- `ObservationSlide`.
+- `ObservationSlide`;
+- `MessageCardsSlide`;
+- `ProgressiveRevealSlide`.
+
+`ProgressiveRevealSlide` è un template riutilizzabile: intro sempre visibile, riquadri presenti ma inizialmente chiusi, apertura progressiva cumulativa, conclusione come ultimo passaggio e reset allo stato iniziale.
 
 ## 9. Output Codex obbligatorio
 Quando richiesto dal prompt, la risposta finale deve stare interamente in un unico blocco markdown `text`, senza testo prima o dopo.
