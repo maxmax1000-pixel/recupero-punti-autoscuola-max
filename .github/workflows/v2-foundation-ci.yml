@@ -6,9 +6,6 @@ on:
       - codex/recupero-punti-v2-foundation
       - codex/recupero-punti-v2-pilot-comparison
       - codex/recupero-punti-v2-clickable-statements
-    paths:
-      - "v2/**"
-      - ".github/workflows/v2-foundation-ci.yml"
 
 permissions:
   contents: write
@@ -32,6 +29,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Validate complete-program sync package
+        run: node scripts/validate-legacy-publish.mjs
 
       - name: Install Chromium for Playwright
         run: npx playwright install --with-deps chromium
@@ -80,8 +80,8 @@ jobs:
           path: v2/dist-publish/**
           if-no-files-found: error
 
-      - name: Publish approved V2 preview to main
-        if: github.event.head_commit.message == 'Pubblica V2 approvata osservazione velocita'
+      - name: Publish approved V2 and complete program
+        if: startsWith(github.event.head_commit.message, 'Pubblica V2 approvata')
         working-directory: .
         run: |
           set -euo pipefail
@@ -100,11 +100,21 @@ jobs:
           mkdir -p "$main_worktree/v2-preview"
           cp -R "$publish_root/." "$main_worktree/v2-preview/"
 
-          git -C "$main_worktree" add v2-preview
+          node v2/scripts/sync-legacy-publish.mjs \
+            v2/legacy-publish \
+            "$main_worktree" \
+            "${GITHUB_SHA:0:12}"
+
+          printf '{"sourceCommit":"%s","publishedAt":"%s"}\n' \
+            "$GITHUB_SHA" \
+            "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            > "$main_worktree/publish-status.json"
+
+          git -C "$main_worktree" add -A
           if git -C "$main_worktree" diff --cached --quiet; then
-            echo "Preview already up to date"
+            echo "V2 e programma completo sono già aggiornati"
             exit 0
           fi
 
-          git -C "$main_worktree" commit -m "Pubblica anteprima V2 osservazione velocita"
+          git -C "$main_worktree" commit -m "Pubblica V2 e sincronizza programma completo"
           git -C "$main_worktree" push origin HEAD:main
