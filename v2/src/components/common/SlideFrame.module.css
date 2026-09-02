@@ -3,10 +3,14 @@
   max-width: 1260px;
   margin: 0 auto;
   min-height: 520px;
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-large);
   padding: var(--space-6);
-  background: linear-gradient(145deg, #18201e, var(--color-panel));
+  background:
+    linear-gradient(115deg, rgba(9, 16, 13, 0.94), rgba(9, 16, 13, 0.82)),
+    url("../../assets/intro-driving-final.webp") center 58% / cover no-repeat;
   box-shadow: 0 20px 70px rgba(0, 0, 0, 0.28);
 }
 
@@ -24,11 +28,12 @@
 }
 
 .title {
-  margin: 0;
+  margin: 0 auto;
   max-width: 1000px;
   color: var(--color-text);
   font-size: var(--font-size-title);
   line-height: 1.05;
+  text-wrap: balance;
 }
 
 .titleCentered {
@@ -37,7 +42,14 @@
 }
 
 .body {
+  flex: 1;
+  display: flex;
+  align-items: center;
   margin-top: var(--space-5);
+}
+
+.body > * {
+  width: 100%;
 }
 
 :global([data-mode="audience"]) .frame {
@@ -55,5 +67,9 @@
 @media (max-width: 760px) {
   .frame {
     padding: var(--space-5);
+  }
+
+  .body {
+    align-items: flex-start;
   }
 }

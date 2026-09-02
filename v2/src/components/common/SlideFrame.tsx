@@ -14,7 +14,7 @@ export function SlideFrame({
   children,
   eyebrow,
   title,
-  titleAlignment = "start",
+  titleAlignment = "center",
 }: PropsWithChildren<SlideFrameProps>) {
   return (
     <article className={styles.frame}>
