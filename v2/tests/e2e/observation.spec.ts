@@ -37,9 +37,9 @@ test("OBSERVATION TEST 1 - 1600x900", async ({ page }) => {
   await page.setViewportSize({ width: 1600, height: 900 });
   await page.goto(observationUrl);
 
-  await expect(page.getByRole("heading", { name: "C’hai mai fatto caso?" })).toBeVisible();
-  await expect(page.getByText("Ma guarda sto rincogl...o, svegliati!", { exact: false })).toBeVisible();
-  await expect(page.getByText("Ma dove va sto cogl...e così di corsa?", { exact: false })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Hai mai notato questa cosa?" })).toBeVisible();
+  await expect(page.getByText("Ma guarda questo qui... svegliati!", { exact: false })).toBeVisible();
+  await expect(page.getByText("Ma dove corre questo? Che fretta ha?", { exact: false })).toBeVisible();
   await expect(page.getByText("NON SONO OPTIONAL.", { exact: true })).toBeVisible();
   await expect(page.getByText("tra l’essere un vero autista o un semplice portatore sano di veicoli.", { exact: false })).toBeVisible();
   await expectNoViewportOverflow(page);
