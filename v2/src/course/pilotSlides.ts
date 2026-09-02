@@ -156,6 +156,26 @@ export const pilotSlides: readonly SlideData[] = [
       "Un comportamento irresponsabile può cambiare la vita di una persona, di una famiglia, per sempre.",
   },
   {
+    id: "g1-intro-03e-prevenire-urgenza-prima-di-partire",
+    type: "reveal-question",
+    title: "Prevenire l’urgenza prima di partire",
+    durationMinutes: 5,
+    teacherNotes:
+      "Lascia inizialmente visibili i quattro richiami e chiedi alla classe di proporre una soluzione. Solo dopo il confronto fai clic sulla domanda. Evidenzia che l’anticipo non elimina gli imprevisti, ma impedisce alla fretta di trasformarsi in una scelta di guida pericolosa.",
+    intro: [
+      "Trovi coda? Hai una giornata piena e sei di corsa? Hai avuto un imprevisto ed hai fretta?",
+      "Tutto questo va considerato PRIMA di salire sul veicolo.",
+      "Un buon autista dà per scontato che queste cose possano accadere. Anzi, dà per scontato che succederanno.",
+      "Questo è l’approccio corretto da tenere ogni volta che si sa che durante la giornata si dovrà usare un veicolo.",
+    ],
+    question: "Una valida soluzione?",
+    questionIsAction: true,
+    answer: "Partire SEMPRE in largo anticipo.",
+    conclusion:
+      "Partire in orario o addirittura in ritardo è una delle cause che producono incidenti.",
+    titleAlignment: "center",
+  },
+  {
     id: "g1-intro-04-mettiamoci-alla-prova",
     type: "reveal-question",
     title: "Mettiamoci alla prova",
@@ -174,5 +194,6 @@ export const pilotLessonOrder: readonly SlideId[] = [
   "g1-intro-03b-ci-hai-mai-fatto-caso",
   "g1-intro-03c-senso-civico-alla-guida",
   "g1-intro-03d-il-problema-vero-non-sei-solo-tu",
+  "g1-intro-03e-prevenire-urgenza-prima-di-partire",
   "g1-intro-04-mettiamoci-alla-prova",
 ];

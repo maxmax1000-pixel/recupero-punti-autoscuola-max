@@ -29,7 +29,7 @@ function renderSlide(slide: SlideData) {
     case "clickable-statements":
       return <ClickableStatementsSlide slide={slide} />;
     case "reveal-question":
-      return <RevealQuestionSlide slide={slide} />;
+      return <RevealQuestionSlide key={slide.id} slide={slide} />;
     case "observation":
       return <ObservationSlide slide={slide} />;
     case "message-cards":

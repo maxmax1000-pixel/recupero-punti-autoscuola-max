@@ -24,25 +24,59 @@ function RevealIcon() {
 export function RevealQuestionSlide({ slide }: RevealQuestionSlideProps) {
   const [isRevealed, setIsRevealed] = useState(false);
   const solutionId = `reveal-question-solution-${slide.id}`;
+  const toggleSolution = () => setIsRevealed((currentValue) => !currentValue);
 
   return (
-    <SlideFrame title={slide.title}>
-      <div className={styles.layout}>
-        <section className={styles.questionCard}>
-          <h2 className={styles.question}>{slide.question}</h2>
-        </section>
+    <SlideFrame title={slide.title} titleAlignment={slide.titleAlignment}>
+      <div
+        className={`${styles.layout} ${
+          slide.intro?.length ? styles.layoutWithIntro : ""
+        }`}
+      >
+        {slide.intro?.length ? (
+          <section aria-label="Contesto" className={styles.introGrid}>
+            {slide.intro.map((paragraph) => (
+              <p className={styles.introItem} key={paragraph}>
+                {paragraph}
+              </p>
+            ))}
+          </section>
+        ) : null}
 
-        <button
-          aria-controls={solutionId}
-          aria-expanded={isRevealed}
-          className={styles.revealButton}
-          data-testid="reveal-solution"
-          onClick={() => setIsRevealed((currentValue) => !currentValue)}
-          type="button"
-        >
-          <RevealIcon />
-          {isRevealed ? "Nascondi soluzione" : "Mostra soluzione"}
-        </button>
+        {slide.questionIsAction ? (
+          <button
+            aria-controls={solutionId}
+            aria-expanded={isRevealed}
+            className={`${styles.questionCard} ${styles.questionButton}`}
+            data-testid="reveal-solution"
+            onClick={toggleSolution}
+            type="button"
+          >
+            <span aria-hidden="true" className={styles.questionSpacer} />
+            <span className={styles.question}>{slide.question}</span>
+            <span aria-hidden="true" className={styles.questionIndicator}>
+              {isRevealed ? "−" : "+"}
+            </span>
+          </button>
+        ) : (
+          <section className={styles.questionCard}>
+            <h2 className={styles.question}>{slide.question}</h2>
+          </section>
+        )}
+
+        {!slide.questionIsAction ? (
+          <button
+            aria-controls={solutionId}
+            aria-expanded={isRevealed}
+            className={styles.revealButton}
+            data-testid="reveal-solution"
+            onClick={toggleSolution}
+            type="button"
+          >
+            <RevealIcon />
+            {isRevealed ? "Nascondi soluzione" : "Mostra soluzione"}
+          </button>
+        ) : null}
 
         <section
           aria-label="Soluzione"
@@ -54,6 +88,9 @@ export function RevealQuestionSlide({ slide }: RevealQuestionSlideProps) {
         >
           <p className={styles.answer}>{slide.answer}</p>
           {slide.bridge ? <p className={styles.bridge}>{slide.bridge}</p> : null}
+          {slide.conclusion ? (
+            <p className={styles.conclusion}>{slide.conclusion}</p>
+          ) : null}
         </section>
       </div>
     </SlideFrame>

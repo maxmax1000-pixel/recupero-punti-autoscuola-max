@@ -82,9 +82,13 @@ export interface ClickableStatementsSlideData extends BaseSlide {
 
 export interface RevealQuestionSlideData extends BaseSlide {
   type: "reveal-question";
+  intro?: readonly string[];
   question: string;
+  questionIsAction?: boolean;
   answer: string;
   bridge?: string;
+  conclusion?: string;
+  titleAlignment?: "start" | "center";
 }
 
 export interface ObservationFactor {

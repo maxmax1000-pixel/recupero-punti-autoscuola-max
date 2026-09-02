@@ -22,6 +22,10 @@
       "script": "intro-slide3d-il-problema-vero-non-sei-solo-tu.js"
     },
     {
+      "slideId": "g1-intro-03e-prevenire-urgenza-prima-di-partire",
+      "script": "intro-slide3e-prevenire-urgenza-prima-di-partire.js"
+    },
+    {
       "slideId": "g1-intro-04-mettiamoci-alla-prova",
       "script": "intro-slide4-mettiamoci-alla-prova.js"
     }

@@ -6,6 +6,7 @@ interface SlideFrameProps {
   title: string;
   badge?: string;
   eyebrow?: string;
+  titleAlignment?: "start" | "center";
 }
 
 export function SlideFrame({
@@ -13,6 +14,7 @@ export function SlideFrame({
   children,
   eyebrow,
   title,
+  titleAlignment = "start",
 }: PropsWithChildren<SlideFrameProps>) {
   return (
     <article className={styles.frame}>
@@ -22,7 +24,13 @@ export function SlideFrame({
         </div>
       ) : null}
       {eyebrow ? <p className={styles.eyebrow}>{eyebrow}</p> : null}
-      <h1 className={styles.title}>{title}</h1>
+      <h1
+        className={`${styles.title} ${
+          titleAlignment === "center" ? styles.titleCentered : ""
+        }`}
+      >
+        {title}
+      </h1>
       <div className={styles.body}>{children}</div>
     </article>
   );

@@ -77,6 +77,13 @@ jobs:
           path: v2/artifacts/sense-civico-*.png
           if-no-files-found: error
 
+      - name: Upload prevenzione urgenza screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: prevenzione-urgenza-screenshots
+          path: v2/artifacts/prevenzione-urgenza-*.png
+          if-no-files-found: error
+
       - name: Build static preview
         run: npx vite build --base=./ --outDir dist-publish --emptyOutDir
 
@@ -106,6 +113,7 @@ jobs:
           rm -rf "$main_worktree/v2-preview"
           mkdir -p "$main_worktree/v2-preview"
           cp -R "$publish_root/." "$main_worktree/v2-preview/"
+          cp 01_CODEX_START_HERE.md "$main_worktree/01_CODEX_START_HERE.md"
 
           node v2/scripts/sync-legacy-publish.mjs \
             v2/legacy-publish \

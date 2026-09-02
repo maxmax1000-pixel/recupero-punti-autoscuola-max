@@ -31,6 +31,11 @@
   line-height: 1.05;
 }
 
+.titleCentered {
+  max-width: none;
+  text-align: center;
+}
+
 .body {
   margin-top: var(--space-5);
 }
