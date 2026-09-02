@@ -31,11 +31,15 @@ Prima di proporre modifiche o scrivere codice, leggere integralmente:
 - Non chiedere all’utente di fare operazioni su GitHub o Terminale se ChatGPT può eseguirle o verificarle direttamente.
 - Per il programma online, evitare link cliccabili dentro ChatGPT perché in passato hanno opacizzato/bloccato l’interfaccia. Quando serve, fornire l’indirizzo in testo semplice da copiare nella barra del browser.
 
-## 5. Regola V2 / programma completo
+## 5. Regola V2 / programma completo — PUBBLICAZIONE UNICA
 - La V2 è la sorgente definitiva delle nuove slide.
 - Il programma completo legacy NON va più usato per progettare nuove slide.
-- Ogni slide V2 approvata deve essere sincronizzata anche nel programma completo online, nello stesso punto della sequenza, così il docente può scorrere il corso dall’inizio e valutarne fluidità, ritmo e continuità.
-- La sincronizzazione nel legacy deve essere chirurgica: modificare solo ciò che serve alla slide approvata, senza alterare navigazione, timer, regia docente o altre slide.
+- Ogni nuova slide V2 deve avere, già durante lo sviluppo, anche la propria copia tecnica destinata al programma completo dentro `v2/legacy-publish/` e la relativa voce nel manifest.
+- Un controllo automatico verifica che nessuna slide V2 possa arrivare alla pubblicazione senza la propria copia per il programma completo.
+- Lo stesso controllo verifica anche che l’ordine delle slide nel pacchetto del programma completo coincida con l’ordine V2, così una slide non può finire nel punto sbagliato.
+- Quando l’utente dice **“pubblica”**, deve partire UN SOLO processo: controlli → V2 online → sincronizzazione automatica del programma completo → aggiornamento di `main`.
+- NON eseguire più una seconda sincronizzazione manuale dopo la pubblicazione: il programma completo deve essere aggiornato dallo stesso processo.
+- ChatGPT deve comunque attendere che GitHub Pages risulti completato con successo prima di dire all’utente che la pubblicazione è effettivamente online.
 - Quando la V2 avrà coperto abbastanza contenuti, sostituirà definitivamente il legacy e la doppia manutenzione terminerà.
 
 ## 6. Regole di approvazione
@@ -65,6 +69,14 @@ Quando occorre guidare l’utente in Terminale o in interfacce tecniche: una sol
 - Testi narrativi o più lunghi restano normalmente allineati a sinistra, perché così sono più leggibili.
 - La regola non è “centrare tutto”, ma evitare composizioni sbilanciate: ogni elemento importante deve occupare lo spazio in modo intenzionale e visivamente equilibrato.
 - Prima di approvare una slide, controllare espressamente: spazio vuoto a destra/sinistra, centratura dei titoli brevi, equilibrio dei riquadri finali e distribuzione complessiva nel formato 16:9.
+
+## 8 ter. Interazioni riutilizzabili — RIVELAZIONE PROGRESSIVA
+- È disponibile un modello V2 riutilizzabile `progressive-reveal` per slide con contenuti da far comparire uno alla volta.
+- Il testo introduttivo resta visibile; i riquadri dei passaggi sono presenti fin dall’inizio ma con contenuto nascosto.
+- Cliccando un passaggio, quel contenuto e tutti i precedenti diventano visibili e restano aperti.
+- Il riquadro conclusivo può essere usato come ultimo passaggio forte.
+- Il reset dell’interazione riporta la slide allo stato iniziale.
+- Quando didatticamente utile, preferire questo modello a una slide sovraccarica di testo già tutto visibile.
 
 ## 9. URL principali
 Programma completo legacy:
