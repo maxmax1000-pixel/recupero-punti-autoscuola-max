@@ -199,7 +199,12 @@ Tutti i casi tecnici devono riportare riferimenti normativi attuali quando vengo
 - test di riferimento attuali: 1600×900 e 1920×1080;
 - non assumere 4K o 85” finché non diventano requisito tecnico della fase;
 - audience mode deve usare quasi tutto il viewport;
-- teacher mode mantiene controlli, note e regia.
+- teacher mode mantiene controlli, note e regia;
+- equilibrio visivo vincolante: non lasciare elementi importanti allineati a sinistra quando rimane molto spazio inutilizzato a destra;
+- titoli brevi e autonomi possono essere centrati quando questo migliora la composizione;
+- callout e messaggi conclusivi brevi possono essere centrati nel riquadro;
+- testi narrativi o lunghi restano normalmente allineati a sinistra per leggibilità;
+- non “centrare tutto”: scegliere l’allineamento in base a equilibrio, leggibilità e uso intenzionale dello spazio.
 
 ## 13. Regole di lavoro
 - Nuove slide: anteprima prima della pubblicazione.
