@@ -70,6 +70,13 @@ jobs:
           path: v2/artifacts/intro05-observation-*.png
           if-no-files-found: error
 
+      - name: Upload sense civico screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: sense-civico-screenshots
+          path: v2/artifacts/sense-civico-*.png
+          if-no-files-found: error
+
       - name: Build static preview
         run: npx vite build --base=./ --outDir dist-publish --emptyOutDir
 
