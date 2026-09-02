@@ -12,6 +12,7 @@ import { RevealQuestionSlide } from "../slides/RevealQuestionSlide";
 import { SolutionSlide } from "../slides/SolutionSlide";
 import { useCourseController } from "../../state/CourseController";
 import type { SlideData } from "../../core/slideTypes";
+import { AudienceFit } from "./AudienceFit";
 import styles from "./CourseShell.module.css";
 
 function renderSlide(slide: SlideData) {
@@ -55,6 +56,14 @@ export function CourseShell() {
   } = useCourseController();
 
   const isTeacher = mode === "teacher";
+  const slideContent = errorMessage ? (
+    <SlideFrame eyebrow="Errore registry" title="Slide non trovata">
+      <p className={styles.errorText}>{errorMessage}</p>
+      <p className={styles.errorCode}>ID richiesto: {currentSlideId}</p>
+    </SlideFrame>
+  ) : currentSlide ? (
+    renderSlide(currentSlide)
+  ) : null;
 
   return (
     <div className={styles.shell} data-mode={mode}>
@@ -76,14 +85,11 @@ export function CourseShell() {
               : `${styles.stage} ${styles.audienceStage}`
           }
         >
-          {errorMessage ? (
-            <SlideFrame eyebrow="Errore registry" title="Slide non trovata">
-              <p className={styles.errorText}>{errorMessage}</p>
-              <p className={styles.errorCode}>ID richiesto: {currentSlideId}</p>
-            </SlideFrame>
-          ) : currentSlide ? (
-            renderSlide(currentSlide)
-          ) : null}
+          {isTeacher ? (
+            slideContent
+          ) : (
+            <AudienceFit slideKey={currentSlideId}>{slideContent}</AudienceFit>
+          )}
         </section>
 
         {isTeacher ? (
