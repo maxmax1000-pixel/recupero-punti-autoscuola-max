@@ -3,6 +3,7 @@ import { ABCaseSlide } from "../slides/ABCaseSlide";
 import { ClickableStatementsSlide } from "../slides/ClickableStatementsSlide";
 import { ComparisonSlide } from "../slides/ComparisonSlide";
 import { DiscussionSlide } from "../slides/DiscussionSlide";
+import { DoubleStandardSlide } from "../slides/DoubleStandardSlide";
 import { FreeResponseSlide } from "../slides/FreeResponseSlide";
 import { ImageTextSlide } from "../slides/ImageTextSlide";
 import { MessageCardsSlide } from "../slides/MessageCardsSlide";
@@ -33,6 +34,8 @@ function renderSlide(slide: SlideData) {
       return <RevealQuestionSlide key={slide.id} slide={slide} />;
     case "observation":
       return <ObservationSlide slide={slide} />;
+    case "double-standard":
+      return <DoubleStandardSlide slide={slide} />;
     case "message-cards":
       return <MessageCardsSlide slide={slide} />;
     case "progressive-reveal":
