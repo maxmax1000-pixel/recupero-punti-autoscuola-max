@@ -1,7 +1,7 @@
 # Autoscuola Max — Corso Recupero Punti
 ## PROJECT STATUS
 
-Stato operativo: 1 settembre 2026, dopo approvazione e pubblicazione V2 della slide intro 3.
+Stato operativo: 2 settembre 2026, dopo approvazione e pubblicazione della slide “Mettiamoci alla prova” sia nella V2 sia nel programma completo.
 
 ## 1. Obiettivo del progetto
 Corso Recupero Punti interattivo di Autoscuola Max:
@@ -15,75 +15,81 @@ Corso Recupero Punti interattivo di Autoscuola Max:
 Repository:
 `maxmax1000-pixel/recupero-punti-autoscuola-max`
 
-Programma completo legacy:
-https://maxmax1000-pixel.github.io/recupero-punti-autoscuola-max/
+Programma completo:
+`https://maxmax1000-pixel.github.io/recupero-punti-autoscuola-max/`
 
 V2 preview:
-https://maxmax1000-pixel.github.io/recupero-punti-autoscuola-max/v2-preview/
+`https://maxmax1000-pixel.github.io/recupero-punti-autoscuola-max/v2-preview/`
 
-V2 intro 3 diretta:
-https://maxmax1000-pixel.github.io/recupero-punti-autoscuola-max/v2-preview/?deck=pilot&mode=audience&slide=g1-intro-03-frasi-che-sentiamo
-
-## 3. Main e pubblicazione
-Main applicativo dopo la sincronizzazione legacy intro 3:
-`6419d24c2106fb68a64a81be3ca2850b10cacd75`
-
-Commit:
-`Collega sync legacy intro 3`
-
-Questo pacchetto ha aggiunto le tre Fonti di progetto, `intro-slide3-clickable.js` e una sola riga di collegamento in `index.html`. Le altre 19 schermate legacy e il motore non sono stati modificati.
-
-GitHub Pages relativo al commit applicativo sopra: SUCCESS. Un eventuale commit successivo di solo `PROJECT_STATUS.md` è documentale e non modifica il programma.
-
-## 4. Branch V2 corrente
-Branch di lavoro più recente:
-`codex/recupero-punti-v2-clickable-statements`
-
-Commit di pubblicazione/trigger più recente sul branch:
-`d1d1bec41423aa264e46df0986ab833b8ce10401`
-
-Ultimo commit di contenuto/grafica approvato prima del trigger:
-`4f35225882a42aa87933efbad5d2b1ce9263656f`
+## 3. Stato pubblicazione attuale
+Ultimo aggiornamento applicativo del programma completo:
+`dca95ca94a993a94f03dd4186b8e28cf13409f1b`
 
 Messaggio:
-`FASE 3A - Rifinisce impaginazione frasi cliccabili`
+`Collega Mettiamoci alla prova nel programma completo`
 
-## 5. CI
-Workflow:
-`V2 Foundation CI`
+GitHub Pages relativo a questo aggiornamento: SUCCESS.
 
-Ultima validazione prima della pubblicazione:
+La V2 con “Mettiamoci alla prova” è stata pubblicata correttamente prima della sincronizzazione nel programma completo.
+
+## 4. Branch V2 corrente
+Branch di lavoro:
+`codex/recupero-punti-v2-clickable-statements`
+
+Ultimo commit di contenuto approvato per la nuova slide:
+`2a0c9ad8bc2fcccbcc6bb9361a95a4490c14bed9`
+
+Messaggio:
+`FASE 4 - Introduce Mettiamoci alla prova`
+
+Commit usato per autorizzare la pubblicazione V2:
+`a664a0f0a91ab09714678a029a2a31cce851c310`
+
+## 5. Controlli automatici
+Ultima validazione V2 della FASE 4:
 - build: PASS;
-- Playwright: 15/15 PASS;
+- test automatici: 18/18 PASS;
 - screenshot: generati;
-- pubblicazione V2 preview: SUCCESS dopo approvazione utente.
+- pubblicazione V2: SUCCESS dopo approvazione utente.
 
-Nota tecnica: GitHub Actions segnala deprecazione futura di Node 20 per alcune Actions, ma al momento i job sono conclusi con successo. Non intervenire finché non diventa un problema operativo o non viene pianificata una manutenzione dedicata.
+Nota tecnica: GitHub Actions segnala deprecazione futura di Node 20 per alcune Actions. Non intervenire finché non diventa un problema operativo o non viene pianificata manutenzione dedicata.
 
-## 6. Regola operativa V2 / legacy — NUOVA E VINCOLANTE
-Decisione utente del 1 settembre 2026:
+## 6. Regola operativa V2 / programma completo — VINCOLANTE
 - la V2 è la sorgente definitiva;
-- ogni slide V2 approvata deve essere sincronizzata anche nel programma completo legacy, nella posizione corretta;
-- scopo: permettere al docente di avviare il programma dall’inizio e valutare continuamente fluidità, ritmo e passaggi tra schermate;
-- il legacy non va più usato per progettare nuove slide;
+- ogni slide V2 approvata deve essere sincronizzata anche nel programma completo, nella posizione corretta;
+- lo scopo è permettere al docente di avviare il programma dall’inizio e valutare continuamente fluidità, ritmo e passaggi tra schermate;
+- il legacy non va usato per progettare nuove slide;
 - la sincronizzazione deve essere chirurgica e non alterare altre schermate, navigazione, timer o regia docente;
-- quando la migrazione V2 sarà sufficientemente completa, la V2 sostituirà il legacy e la doppia manutenzione terminerà.
+- quando la migrazione V2 sarà sufficientemente completa, la V2 sostituirà il legacy.
 
-## 7. Blocco introduttivo del corso
-Nel programma completo l’apertura prevista è:
-1. slide esistente “Benvenuti”;
-2. slide esistente “Perché siete qui?” / sondaggio;
-3. intro 1 — “Saper guidare o saper soltanto muovere un veicolo da punto A a punto B”;
-4. intro 2 — “La differenza è questa”;
-5. intro 3 — “Le frasi che sentiamo più spesso”.
+## 7. Regola di comunicazione con l’utente — VINCOLANTE
+- ChatGPT deve parlare all’utente in italiano semplice e non tecnico.
+- I termini tecnici vanno tradotti o evitati.
+- Prima di un passaggio tecnico spiegare sempre, in parole normali, che cosa succede e se il programma online cambierà oppure no.
+- I report di Codex vanno tradotti in modo comprensibile prima di proporre il passo successivo.
+- L’utente non va coinvolto in GitHub/Terminale se ChatGPT può occuparsene direttamente.
+- Prompt Codex: prima spiegazione semplice all’utente, poi unico blocco tecnico copiabile.
+- Operazioni UI/Terminale: una sola azione per volta.
+- Per il programma online preferire URL in testo semplice da copiare, non link cliccabili in ChatGPT.
 
-## 8. Slide V2 reali approvate
+## 8. Blocco introduttivo del corso — stato attuale
+Nel programma completo la sequenza iniziale è ora:
+1. “Benvenuti”;
+2. “Perché siete qui?” / sondaggio;
+3. “Saper guidare o saper soltanto muovere un veicolo da punto A a punto B”;
+4. “La differenza è questa”;
+5. “Le frasi che sentiamo più spesso”;
+6. “Mettiamoci alla prova”.
+
+Il programma completo è passato da 20 a 21 schermate.
+
+## 9. Slide approvate e pubblicate
 ### A. `g1-intro-02-differenza`
 Titolo: `La differenza è questa`
 Tipo: `comparison`
 Badge: `2 di 3`
 Durata: 6 minuti
-Stato: APPROVATA VISIVAMENTE, TESTATA, PUBBLICATA V2.
+Stato: APPROVATA, TESTATA, PUBBLICATA V2 e sincronizzata nel programma completo.
 
 Contenuto:
 MUOVERE UN VEICOLO:
@@ -110,67 +116,74 @@ Titolo: `Le frasi che sentiamo più spesso`
 Tipo: `clickable-statements`
 Badge: `3 di 3`
 Durata: 5 minuti
-Stato: APPROVATA VISIVAMENTE, TESTATA 15/15, PUBBLICATA V2.
-
-Comportamento:
-- 3 statement cliccabili;
-- nessuna risposta aperta all’avvio;
-- massimo una risposta aperta alla volta;
-- click sullo stesso statement = chiusura;
-- accessibilità con button / aria-expanded / aria-controls.
+Stato: APPROVATA, TESTATA, PUBBLICATA V2 e sincronizzata nel programma completo.
 
 Item 1:
-Statement: `Eh, ma sono passati 20 anni da quando ho preso la patente...`
-Risposta: `E quindi? Non è che se tu ti dimentichi la regola smette di esistere. È tuo compito, in quanto possessore di patente, restare aggiornato sulle nuove disposizioni del Codice della Strada e non dimenticare quelle vecchie.`
+`Eh, ma sono passati 20 anni da quando ho preso la patente...`
+Risposta:
+`E quindi? Non è che se tu ti dimentichi la regola smette di esistere. È tuo compito, in quanto possessore di patente, restare aggiornato sulle nuove disposizioni del Codice della Strada e non dimenticare quelle vecchie.`
 
 Item 2:
-Statement: `Eh, ma tanto lo fanno tutti...`
-Risposta DEFINITIVA: `E quindi? Se tanti sbagliano, questo rende giusto l’errore? Dobbiamo ragionare con la nostra testa o imitare gli altri?`
+`Eh, ma tanto lo fanno tutti...`
+Risposta DEFINITIVA:
+`E quindi? Se tanti sbagliano, questo rende giusto l’errore? Dobbiamo ragionare con la nostra testa o imitare gli altri?`
 
-La precedente formulazione con “gregge di pecore” è abolita e non va ripristinata.
+La formulazione con “gregge di pecore” è abolita e non va ripristinata.
 
 Item 3:
-Statement: `Sono 30 anni che ho la patente e non ho mai fatto un incidente.`
-Risposta: `Finché gli altri frenano al posto tuo, incidenti non ne fai.`
+`Sono 30 anni che ho la patente e non ho mai fatto un incidente.`
+Risposta:
+`Finché gli altri frenano al posto tuo, incidenti non ne fai.`
 
-Elementi rimossi definitivamente dalla slide:
+Elementi rimossi definitivamente:
 - `Eh, ma io ho sempre fatto così...`
 - `Eh, ma non me lo ricordavo...`
 - riquadro finale `Dimenticare una regola non significa che la regola non esista più.`
 
-## 9. Intro 1
+### C. `g1-intro-04-mettiamoci-alla-prova`
+Titolo: `Mettiamoci alla prova`
+Tipo: `reveal-question`
+Durata: 4 minuti
+Stato: APPROVATA VISIVAMENTE, TESTATA 18/18, PUBBLICATA V2 e sincronizzata nel programma completo subito dopo “Le frasi che sentiamo più spesso”.
+
+Domanda:
+`Il rispetto delle Norme del Codice della Strada è sempre subordinato alla presenza della segnaletica?`
+
+Risposta nascosta inizialmente:
+`NO, esistono delle regole generali che dobbiamo conoscere e per le quali non è prevista la presenza dei segnali.`
+
+Frase ponte:
+`Da qui iniziamo a parlare proprio di queste regole generali.`
+
+Comportamento:
+- domanda visibile subito;
+- risposta nascosta;
+- pulsante “Mostra soluzione”;
+- secondo click “Nascondi soluzione”;
+- reset/navigazione riportano allo stato iniziale.
+
+Implementazione legacy:
+- file `intro-slide4-mettiamoci-alla-prova.js`;
+- collegamento in `index.html`;
+- inserimento subito dopo “Le frasi che sentiamo più spesso”;
+- nessuna modifica al motore.
+
+## 10. Intro 1
 Titolo concettuale:
 `Saper guidare o saper soltanto muovere un veicolo da punto A a punto B`
 
-Testo approvato nel legacy:
+Testo approvato nel programma completo:
 `Tra il saper guidare ed essere il classico portatore sano di veicoli, c’è una grande differenza. Qual è secondo te?`
+
 Prompt aula:
 `Dai pure liberamente la tua opinione.`
 
-Immagine legacy corretta: `intro-driving-final.webp`.
+Immagine corretta: `intro-driving-final.webp`.
 
 Stato V2: NON ANCORA MIGRATA COME SLIDE REALE V2.
 
-## 10. Programma legacy
-Il legacy contiene 20 schermate ed è attualmente il programma completo usato per valutare il flusso complessivo.
-
-La slide 5 legacy “Le frasi che sentiamo più spesso” è SINCRONIZZATA con la versione approvata a 3 frasi cliccabili.
-
-Implementazione legacy:
-- file `intro-slide3-clickable.js`;
-- collegamento in `index.html` dopo `intro-slide2-v2.js`;
-- usa `state.caseSelection`, già sincronizzato con lo schermo aula;
-- click sullo stesso item richiude la risposta;
-- cambio slide / reset interazione azzerano lo stato tramite il motore esistente;
-- nessuna modifica a `app-core.js` o `app-runtime.js`.
-
-Stato deploy: GitHub Pages SUCCESS.
-
-PROSSIMO INTERVENTO OPERATIVO:
-Aprire il programma completo dall’inizio e valutare fluidità e ritmo del blocco introduttivo con la slide 5 aggiornata. Raccogliere eventuali correzioni prima di scegliere la prossima slide da migrare in V2.
-
-## 11. Contenuti tecnici legacy già presenti
-Sono già stati costruiti diversi casi tecnici (semafori, pedoni, giallo lampeggiante, intersezioni regolate/non regolate, lanterne rosse lampeggianti, corsie reversibili). La migrazione V2 di questi casi non è ancora il focus immediato.
+## 11. Contenuti tecnici già presenti
+Sono già stati costruiti diversi casi tecnici: semafori, pedoni, giallo lampeggiante, intersezioni regolate/non regolate, lanterne rosse lampeggianti, corsie reversibili.
 
 Regola didattica:
 - MODELLO A — scelta guidata A/B solo quando entrambe le alternative sono plausibili;
@@ -182,29 +195,27 @@ Tutti i casi tecnici devono riportare riferimenti normativi attuali quando vengo
 - dark green/black Autoscuola Max;
 - pulito e professionale;
 - uso aula e leggibilità a distanza prioritari;
-- monitor iniziale più piccolo non ancora identificato: usare design responsive;
+- monitor iniziale più piccolo non ancora identificato: design responsive;
 - test di riferimento attuali: 1600×900 e 1920×1080;
-- non assumere 4K o 85” finché non vengono definiti come requisito tecnico della fase;
+- non assumere 4K o 85” finché non diventano requisito tecnico della fase;
 - audience mode deve usare quasi tutto il viewport;
 - teacher mode mantiene controlli, note e regia.
 
 ## 13. Regole di lavoro
 - Nuove slide: anteprima prima della pubblicazione.
 - Piccole correzioni su slide approvate: applicabili direttamente.
-- Nessuna dichiarazione “pubblicato” prima di CI + Pages SUCCESS.
+- Nessuna dichiarazione “pubblicato” prima della verifica finale online.
 - Prompt Codex in un solo blocco copiabile.
 - Output Codex richiesto in unico blocco `text`.
 - In Terminale/UI: una sola azione per volta.
 
-## 14. Prossimi passi
-Ordine suggerito:
-1. verificare il flusso completo dall’inizio con la slide 5 aggiornata;
-2. raccogliere eventuali correzioni di fluidità del blocco introduttivo;
-3. decidere se migrare in V2 l’intro 1 (`1 di 3`) oppure procedere alla prima slide/caso successivo da rendere V2;
-4. continuare ciclo: V2 → screenshot/CI → approvazione → pubblicazione V2 → sincronizzazione legacy completa.
+## 14. Prossimo intervento didattico
+Dopo “Mettiamoci alla prova” inizia il blocco delle **regole generali del Codice della Strada**, cioè regole che il conducente deve conoscere anche quando non c’è un segnale specifico a ricordarle.
+
+Il prossimo lavoro deve quindi progettare la prima slide di questo nuovo blocco, mantenendo la continuità didattica con la frase ponte appena approvata.
 
 ## 15. Fonti persistenti
-Le tre Fonti sono salvate nella Libreria ChatGPT, cartella `/RECUPERO PUNTI AUTOSCUOLA MAX`, e hanno una copia nel repository:
+Le Fonti sono salvate nella Libreria ChatGPT, cartella `/RECUPERO PUNTI AUTOSCUOLA MAX`, e hanno una copia nel repository:
 - `00_CHATGPT_START_HERE.md`
 - `01_CODEX_START_HERE.md`
 - `PROJECT_STATUS.md`
