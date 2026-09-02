@@ -1,10 +1,10 @@
 // Sync legacy della slide V2 approvata "Il senso civico alla guida: questo sconosciuto".
-// Inserimento vincolante subito dopo "Hai mai notato questa cosa?".
+// Inserimento vincolante subito dopo "Quando la colpa diventa “sfiga”".
 (() => {
   const title = 'Il senso civico alla guida: questo sconosciuto';
   if (slides.some(s => s.title === title)) return;
 
-  const afterIndex = slides.findIndex(s => s.title === 'Hai mai notato questa cosa?');
+  const afterIndex = slides.findIndex(s => s.title === 'Quando la colpa diventa “sfiga”');
   if (afterIndex < 0) return;
 
   const items = [

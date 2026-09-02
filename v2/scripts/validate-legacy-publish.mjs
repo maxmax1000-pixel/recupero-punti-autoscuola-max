@@ -20,9 +20,20 @@ if (!Array.isArray(manifest.entries) || manifest.entries.length === 0) {
 
 const slideIds = manifest.entries.map((entry) => entry.slideId);
 const scripts = manifest.entries.map((entry) => entry.script);
+const assets = manifest.assets ?? [];
 
 if (new Set(slideIds).size !== slideIds.length) fail("slideId duplicato nel manifest");
 if (new Set(scripts).size !== scripts.length) fail("script duplicato nel manifest");
+if (!Array.isArray(assets)) fail("manifest.assets deve essere un array");
+if (new Set(assets).size !== assets.length) fail("asset duplicato nel manifest");
+
+for (const asset of assets) {
+  if (typeof asset !== "string" || !asset) fail("nome asset mancante");
+  if (asset.includes("/") || asset.includes("..")) fail(`nome asset non valido: ${asset}`);
+  if (!existsSync(resolve(v2Root, "legacy-publish", asset))) {
+    fail(`asset legacy mancante: ${asset}`);
+  }
+}
 
 for (const entry of manifest.entries) {
   if (!entry.slideId || !entry.script) fail("ogni voce deve avere slideId e script");
@@ -53,4 +64,6 @@ if (pilotIds.length !== slideIds.length || pilotIds.some((id, index) => slideIds
   );
 }
 
-console.log(`Legacy publish package OK: ${pilotIds.length} slide coperte e nello stesso ordine.`);
+console.log(
+  `Legacy publish package OK: ${pilotIds.length} slide coperte nello stesso ordine e ${assets.length} asset verificati.`,
+);

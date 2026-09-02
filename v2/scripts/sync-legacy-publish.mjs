@@ -17,6 +17,14 @@ if (!existsSync(indexPath)) throw new Error("index.html del programma completo m
 
 const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
 const scripts = manifest.entries.map((entry) => entry.script);
+const assets = manifest.assets ?? [];
+
+for (const asset of assets) {
+  const source = resolve(sourceDir, asset);
+  const target = resolve(targetRoot, asset);
+  if (!existsSync(source)) throw new Error(`Asset legacy mancante: ${asset}`);
+  copyFileSync(source, target);
+}
 
 for (const script of scripts) {
   const source = resolve(sourceDir, script);
@@ -54,4 +62,6 @@ const managedBlock = [
 lines.splice(anchorIndex + 1, 0, ...managedBlock);
 
 writeFileSync(indexPath, `${lines.join("\n")}\n`, "utf8");
-console.log(`Programma completo sincronizzato con ${scripts.length} slide V2.`);
+console.log(
+  `Programma completo sincronizzato con ${scripts.length} slide V2 e ${assets.length} asset.`,
+);

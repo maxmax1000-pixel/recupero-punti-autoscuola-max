@@ -1,5 +1,8 @@
 {
   "orderSource": "pilotLessonOrder",
+  "assets": [
+    "intro-driving-final.webp"
+  ],
   "entries": [
     {
       "slideId": "g1-intro-02-differenza",
@@ -12,6 +15,10 @@
     {
       "slideId": "g1-intro-03b-ci-hai-mai-fatto-caso",
       "script": "intro-slide3b-ci-hai-mai-fatto-caso.js"
+    },
+    {
+      "slideId": "g1-intro-03b2-quando-la-colpa-diventa-sfiga",
+      "script": "intro-slide3b2-quando-la-colpa-diventa-sfiga.js"
     },
     {
       "slideId": "g1-intro-03c-senso-civico-alla-guida",

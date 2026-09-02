@@ -4,6 +4,7 @@ import { pilotLessonOrder } from "../../src/course/pilotSlides";
 const compactViewport = { width: 1024, height: 600 };
 const screenshotSlides = new Set([
   "g1-intro-03b-ci-hai-mai-fatto-caso",
+  "g1-intro-03b2-quando-la-colpa-diventa-sfiga",
   "g1-intro-03c-senso-civico-alla-guida",
 ]);
 

@@ -10,6 +10,10 @@ const observationAdapter = resolve(
   repoRoot,
   "v2/legacy-publish/intro-slide3b-ci-hai-mai-fatto-caso.js",
 );
+const doubleStandardAdapter = resolve(
+  repoRoot,
+  "v2/legacy-publish/intro-slide3b2-quando-la-colpa-diventa-sfiga.js",
+);
 const civicAdapter = resolve(
   repoRoot,
   "v2/legacy-publish/intro-slide3c-senso-civico-alla-guida.js",
@@ -21,6 +25,7 @@ async function prepareTeacherHarness(page: Page) {
     <html lang="it">
       <head>
         <meta charset="utf-8" />
+        <base href="http://127.0.0.1:4173/legacy-publish/" />
         <style>${baseCss}\n${layoutCss}</style>
       </head>
       <body>
@@ -44,6 +49,7 @@ async function prepareTeacherHarness(page: Page) {
   });
 
   await page.addScriptTag({ path: observationAdapter });
+  await page.addScriptTag({ path: doubleStandardAdapter });
   await page.addScriptTag({ path: civicAdapter });
   await page.addScriptTag({ path: teacherFitScript });
 }
@@ -138,6 +144,55 @@ for (const viewport of [
     await expectFullyInsideTeacherFrame(page);
     await page.screenshot({
       path: `artifacts/viewport-fit-legacy-teacher-osservazione-${viewport.label}.png`,
+    });
+
+    const adjacentTitles = await page.evaluate(() => {
+      const titles = (
+        window as typeof window & { slides: Array<{ title: string }> }
+      ).slides.map((slide) => slide.title);
+      const start = titles.indexOf("Hai mai notato questa cosa?");
+      return titles.slice(start, start + 3);
+    });
+    expect(adjacentTitles).toEqual([
+      "Hai mai notato questa cosa?",
+      "Quando la colpa diventa “sfiga”",
+      "Il senso civico alla guida: questo sconosciuto",
+    ]);
+
+    await renderLegacySlide(page, "Quando la colpa diventa “sfiga”");
+    await expect(
+      page.getByText(
+        "Il problema non è la sfortuna. Il problema è tirarla fuori solo quando ci fa comodo.",
+        { exact: true },
+      ),
+    ).toBeVisible();
+    for (const phrase of [
+      "“Che sfiga...”",
+      "“Non potevo farci niente.”",
+      "“È successo tutto in un attimo.”",
+      "“Mi è andata male.”",
+      "“Ma questo è incapace.”",
+      "“Ma come guida?”",
+      "“Doveva stare più attento.”",
+      "“Uno così non dovrebbe guidare.”",
+    ]) {
+      await expect(page.getByText(phrase, { exact: true })).toBeVisible();
+    }
+    await expect(
+      page.getByText(
+        "Perché, quando l’errore è nostro, diventa sfortuna... e quando è degli altri diventa incapacità?",
+        { exact: true },
+      ),
+    ).toBeVisible();
+    await expect(
+      page.getByText(
+        "La sfiga non deve diventare l’alibi per non riconoscere i nostri errori. E non può valere solo quando fa comodo a noi.",
+        { exact: true },
+      ),
+    ).toBeVisible();
+    await expectFullyInsideTeacherFrame(page);
+    await page.screenshot({
+      path: `artifacts/viewport-fit-legacy-teacher-double-standard-${viewport.label}.png`,
     });
 
     // Verifica anche il cambio slide nello stesso contenitore persistente della regia docente.

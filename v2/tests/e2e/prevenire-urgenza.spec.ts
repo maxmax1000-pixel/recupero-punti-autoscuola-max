@@ -163,13 +163,13 @@ test("PREVENZIONE URGENZA 4 - ordine e reset per ID stabile", async ({ page }) =
   await page.setViewportSize({ width: 1600, height: 900 });
   await page.goto(teacherUrl);
 
-  await expect(page.getByText("6 di 7", { exact: true })).toHaveCount(2);
+  await expect(page.getByText("7 di 8", { exact: true })).toHaveCount(2);
   await page.getByRole("button", { name: question, exact: true }).click();
   await expect(page.getByText(answer, { exact: true })).toBeVisible();
 
   await page.getByRole("button", { name: "Avanti" }).click();
   await expect(page.getByRole("heading", { name: "Mettiamoci alla prova" })).toBeVisible();
-  await expect(page.getByText("7 di 7", { exact: true })).toHaveCount(2);
+  await expect(page.getByText("8 di 8", { exact: true })).toHaveCount(2);
   await expect(page.getByRole("button", { name: "Mostra soluzione" })).toHaveAttribute(
     "aria-expanded",
     "false",

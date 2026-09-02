@@ -70,6 +70,13 @@ jobs:
           path: v2/artifacts/intro05-observation-*.png
           if-no-files-found: error
 
+      - name: Upload double standard screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: double-standard-screenshots
+          path: v2/artifacts/double-standard-*.png
+          if-no-files-found: error
+
       - name: Upload sense civico screenshots
         uses: actions/upload-artifact@v4
         with:

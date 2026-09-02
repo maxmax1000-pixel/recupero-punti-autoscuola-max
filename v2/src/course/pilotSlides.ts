@@ -93,6 +93,42 @@ export const pilotSlides: readonly SlideData[] = [
       "Semplicemente fanno anch’esse parte delle differenze che passano tra l’essere un vero autista o un semplice portatore sano di veicoli.",
   },
   {
+    id: "g1-intro-03b2-quando-la-colpa-diventa-sfiga",
+    type: "double-standard",
+    title: "Quando la colpa diventa “sfiga”",
+    durationMinutes: 5,
+    teacherNotes:
+      "Presenta questa osservazione con tono ironico e umano, non accusatorio. Lascia che la classe riconosca il doppio standard prima di leggere la conclusione. La sfortuna può esistere e non tutti gli incidenti sono evitabili al 100%: il punto è che non deve diventare un alibi automatico per evitare di analizzare i propri errori, soprattutto quando giudichiamo quelli degli altri con maggiore severità.",
+    subtitle:
+      "Il problema non è la sfortuna. Il problema è tirarla fuori solo quando ci fa comodo.",
+    left: {
+      id: "succede-a-noi",
+      title: "SE SUCCEDE A NOI",
+      tone: "reflective",
+      statements: [
+        { id: "che-sfiga", text: "“Che sfiga...”" },
+        { id: "non-potevo-farci-niente", text: "“Non potevo farci niente.”" },
+        { id: "tutto-in-un-attimo", text: "“È successo tutto in un attimo.”" },
+        { id: "andata-male", text: "“Mi è andata male.”" },
+      ],
+    },
+    right: {
+      id: "colpa-di-un-altro",
+      title: "SE SUCCEDE PER COLPA DI UN ALTRO",
+      tone: "critical",
+      statements: [
+        { id: "questo-incapace", text: "“Ma questo è incapace.”" },
+        { id: "come-guida", text: "“Ma come guida?”" },
+        { id: "stare-piu-attento", text: "“Doveva stare più attento.”" },
+        { id: "non-dovrebbe-guidare", text: "“Uno così non dovrebbe guidare.”" },
+      ],
+    },
+    question:
+      "Perché, quando l’errore è nostro, diventa sfortuna... e quando è degli altri diventa incapacità?",
+    conclusion:
+      "La sfiga non deve diventare l’alibi per non riconoscere i nostri errori. E non può valere solo quando fa comodo a noi.",
+  },
+  {
     id: "g1-intro-03c-senso-civico-alla-guida",
     type: "message-cards",
     title: "Il senso civico alla guida: questo sconosciuto",
@@ -192,6 +228,7 @@ export const pilotLessonOrder: readonly SlideId[] = [
   "g1-intro-02-differenza",
   "g1-intro-03-frasi-che-sentiamo",
   "g1-intro-03b-ci-hai-mai-fatto-caso",
+  "g1-intro-03b2-quando-la-colpa-diventa-sfiga",
   "g1-intro-03c-senso-civico-alla-guida",
   "g1-intro-03d-il-problema-vero-non-sei-solo-tu",
   "g1-intro-03e-prevenire-urgenza-prima-di-partire",
