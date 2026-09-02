@@ -68,16 +68,16 @@ export const pilotSlides: readonly SlideData[] = [
   {
     id: "g1-intro-03b-ci-hai-mai-fatto-caso",
     type: "observation",
-    title: "C’hai mai fatto caso?",
+    title: "Hai mai notato questa cosa?",
     durationMinutes: 6,
     sectionBadge: "4 di 4",
     teacherNotes:
       "Leggi i primi due esempi con tono ironico, senza trasformarli in una ramanzina. Lascia che la classe si riconosca nella contraddizione: chi va più piano di noi sembra troppo lento, chi va più veloce sembra troppo veloce. Poi porta l’attenzione sui criteri reali con cui si sceglie la velocità: limite, struttura della strada, condizioni del veicolo e visibilità. Chiudi collegando il ragionamento alla differenza tra vero autista e semplice portatore sano di veicoli.",
     slowerLead:
       "Se trovi qualcuno davanti a te che viaggia a una velocità inferiore alla tua, il pensiero è:",
-    slowerThought: "Ma guarda sto rincogl...o, svegliati!",
+    slowerThought: "Ma guarda questo qui... svegliati!",
     fasterLead: "Se invece trovi un utente che ti sorpassa, il pensiero diventa:",
-    fasterThought: "Ma dove va sto cogl...e così di corsa?",
+    fasterThought: "Ma dove corre questo? Che fretta ha?",
     perspective:
       "Secondo la media generale, l’unica velocità corretta è quella che scegliamo di tenere noi. Quella degli altri, ai nostri occhi, è sempre sbagliata.",
     questionLead: "Ma in tutto questo, stiamo tenendo conto del",
