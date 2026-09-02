@@ -14,6 +14,14 @@
       "script": "intro-slide3b-ci-hai-mai-fatto-caso.js"
     },
     {
+      "slideId": "g1-intro-03c-senso-civico-alla-guida",
+      "script": "intro-slide3c-senso-civico-alla-guida.js"
+    },
+    {
+      "slideId": "g1-intro-03d-il-problema-vero-non-sei-solo-tu",
+      "script": "intro-slide3d-il-problema-vero-non-sei-solo-tu.js"
+    },
+    {
       "slideId": "g1-intro-04-mettiamoci-alla-prova",
       "script": "intro-slide4-mettiamoci-alla-prova.js"
     }
