@@ -1,10 +1,13 @@
 // Sync legacy della slide V2 approvata "Mettiamoci alla prova".
-// Inserimento chirurgico subito dopo "Le frasi che sentiamo più spesso".
+// Inserimento vincolante subito dopo "C’hai mai fatto caso?".
 (() => {
   const title = 'Mettiamoci alla prova';
   if (slides.some(s => s.title === title)) return;
 
-  const afterIndex = slides.findIndex(s => s.title === 'Le frasi che sentiamo più spesso');
+  let afterIndex = slides.findIndex(s => s.title === 'C’hai mai fatto caso?');
+  if (afterIndex < 0) {
+    afterIndex = slides.findIndex(s => s.title === 'Le frasi che sentiamo più spesso');
+  }
   if (afterIndex < 0) return;
 
   const slide = {
