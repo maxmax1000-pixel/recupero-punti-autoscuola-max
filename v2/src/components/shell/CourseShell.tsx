@@ -5,7 +5,9 @@ import { ComparisonSlide } from "../slides/ComparisonSlide";
 import { DiscussionSlide } from "../slides/DiscussionSlide";
 import { FreeResponseSlide } from "../slides/FreeResponseSlide";
 import { ImageTextSlide } from "../slides/ImageTextSlide";
+import { MessageCardsSlide } from "../slides/MessageCardsSlide";
 import { ObservationSlide } from "../slides/ObservationSlide";
+import { ProgressiveRevealSlide } from "../slides/ProgressiveRevealSlide";
 import { RevealQuestionSlide } from "../slides/RevealQuestionSlide";
 import { SolutionSlide } from "../slides/SolutionSlide";
 import { useCourseController } from "../../state/CourseController";
@@ -30,6 +32,10 @@ function renderSlide(slide: SlideData) {
       return <RevealQuestionSlide slide={slide} />;
     case "observation":
       return <ObservationSlide slide={slide} />;
+    case "message-cards":
+      return <MessageCardsSlide slide={slide} />;
+    case "progressive-reveal":
+      return <ProgressiveRevealSlide slide={slide} />;
     case "image-text":
       return <ImageTextSlide slide={slide} />;
   }
