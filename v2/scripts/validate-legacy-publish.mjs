@@ -47,4 +47,10 @@ const extra = slideIds.filter((id) => !pilotIds.includes(id));
 if (missing.length) fail(`slide V2 senza copia programma completo: ${missing.join(", ")}`);
 if (extra.length) fail(`manifest contiene slide non presenti nel pilot: ${extra.join(", ")}`);
 
-console.log(`Legacy publish package OK: ${pilotIds.length} slide coperte.`);
+if (pilotIds.length !== slideIds.length || pilotIds.some((id, index) => slideIds[index] !== id)) {
+  fail(
+    `ordine manifest diverso da pilotLessonOrder. Atteso: ${pilotIds.join(" -> ")}. Manifest: ${slideIds.join(" -> ")}`,
+  );
+}
+
+console.log(`Legacy publish package OK: ${pilotIds.length} slide coperte e nello stesso ordine.`);
