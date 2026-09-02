@@ -8,6 +8,7 @@ export type SlideType =
   | "solution"
   | "clickable-statements"
   | "reveal-question"
+  | "observation"
   | "image-text";
 
 export interface BaseSlide {
@@ -84,6 +85,25 @@ export interface RevealQuestionSlideData extends BaseSlide {
   bridge?: string;
 }
 
+export interface ObservationFactor {
+  label: string;
+  icon: string;
+}
+
+export interface ObservationSlideData extends BaseSlide {
+  type: "observation";
+  slowerLead: string;
+  slowerThought: string;
+  fasterLead: string;
+  fasterThought: string;
+  perspective: string;
+  questionLead: string;
+  factors: readonly ObservationFactor[];
+  conclusionLead: string;
+  conclusionEmphasis: string;
+  conclusionBody: string;
+}
+
 export type ImagePosition = "left" | "right" | "background";
 
 export interface ImageTextSlideData extends BaseSlide {
@@ -102,4 +122,5 @@ export type SlideData =
   | SolutionSlideData
   | ClickableStatementsSlideData
   | RevealQuestionSlideData
+  | ObservationSlideData
   | ImageTextSlideData;

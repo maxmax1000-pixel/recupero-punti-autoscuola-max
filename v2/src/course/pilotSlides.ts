@@ -66,6 +66,33 @@ export const pilotSlides: readonly SlideData[] = [
     ],
   },
   {
+    id: "g1-intro-03b-ci-hai-mai-fatto-caso",
+    type: "observation",
+    title: "C’hai mai fatto caso?",
+    durationMinutes: 6,
+    sectionBadge: "4 di 4",
+    teacherNotes:
+      "Leggi i primi due esempi con tono ironico, senza trasformarli in una ramanzina. Lascia che la classe si riconosca nella contraddizione: chi va più piano di noi sembra troppo lento, chi va più veloce sembra troppo veloce. Poi porta l’attenzione sui criteri reali con cui si sceglie la velocità: limite, struttura della strada, condizioni del veicolo e visibilità. Chiudi collegando il ragionamento alla differenza tra vero autista e semplice portatore sano di veicoli.",
+    slowerLead:
+      "Se trovi qualcuno davanti a te che viaggia a una velocità inferiore alla tua, il pensiero è:",
+    slowerThought: "Ma guarda sto rincogl...o, svegliati!",
+    fasterLead: "Se invece trovi un utente che ti sorpassa, il pensiero diventa:",
+    fasterThought: "Ma dove va sto cogl...e così di corsa?",
+    perspective:
+      "Secondo la media generale, l’unica velocità corretta è quella che scegliamo di tenere noi. Quella degli altri, ai nostri occhi, è sempre sbagliata.",
+    questionLead: "Ma in tutto questo, stiamo tenendo conto del",
+    factors: [
+      { icon: "◴", label: "limite" },
+      { icon: "▥", label: "struttura della strada" },
+      { icon: "▰", label: "condizioni del veicolo" },
+      { icon: "◉", label: "visibilità" },
+    ],
+    conclusionLead: "E NO, tutte queste attenzioni ",
+    conclusionEmphasis: "NON SONO OPTIONAL.",
+    conclusionBody:
+      "Semplicemente fanno anch’esse parte delle differenze che passano tra l’essere un vero autista o un semplice portatore sano di veicoli.",
+  },
+  {
     id: "g1-intro-04-mettiamoci-alla-prova",
     type: "reveal-question",
     title: "Mettiamoci alla prova",
@@ -81,5 +108,6 @@ export const pilotSlides: readonly SlideData[] = [
 export const pilotLessonOrder: readonly SlideId[] = [
   "g1-intro-02-differenza",
   "g1-intro-03-frasi-che-sentiamo",
+  "g1-intro-03b-ci-hai-mai-fatto-caso",
   "g1-intro-04-mettiamoci-alla-prova",
 ];
