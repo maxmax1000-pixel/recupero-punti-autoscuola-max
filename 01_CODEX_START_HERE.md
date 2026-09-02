@@ -64,10 +64,11 @@ Il pilot deck contiene:
 - `g1-intro-03b-ci-hai-mai-fatto-caso`;
 - `g1-intro-03c-senso-civico-alla-guida`;
 - `g1-intro-03d-il-problema-vero-non-sei-solo-tu`;
+- `g1-intro-03e-prevenire-urgenza-prima-di-partire`;
 - `g1-intro-04-mettiamoci-alla-prova`.
 
-Le due slide sul senso civico sono APPROVATE, TESTATE, PUBBLICATE V2 e sincronizzate nel programma completo.
-La suite corrente comprende anche i test dedicati a `message-cards` e `progressive-reveal`.
+Le due slide sul senso civico e `g1-intro-03e-prevenire-urgenza-prima-di-partire` sono APPROVATE, TESTATE, PUBBLICATE V2 e sincronizzate nel programma completo.
+La suite corrente comprende 28 test Playwright, inclusi i controlli dedicati alla nuova slide negli stati chiuso, aperto e reset.
 
 ## 8. Template V2 rilevanti
 - `ComparisonSlide`;
@@ -76,6 +77,8 @@ La suite corrente comprende anche i test dedicati a `message-cards` e `progressi
 - `ObservationSlide`;
 - `MessageCardsSlide`;
 - `ProgressiveRevealSlide`.
+
+`RevealQuestionSlide` supporta testo introduttivo opzionale, domanda cliccabile, risposta e chiusura rivelate insieme, oltre all’allineamento del titolo.
 
 `ProgressiveRevealSlide` è un template riutilizzabile: intro sempre visibile, riquadri presenti ma inizialmente chiusi, apertura progressiva cumulativa, conclusione come ultimo passaggio e reset allo stato iniziale.
 

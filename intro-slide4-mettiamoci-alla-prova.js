@@ -1,10 +1,13 @@
 // Sync legacy della slide V2 approvata "Mettiamoci alla prova".
-// Inserimento vincolante dopo il blocco sul senso civico.
+// Inserimento vincolante dopo la slide sulla prevenzione dell’urgenza.
 (() => {
   const title = 'Mettiamoci alla prova';
   if (slides.some(s => s.title === title)) return;
 
-  let afterIndex = slides.findIndex(s => s.title === 'Il problema vero non sei solo tu');
+  let afterIndex = slides.findIndex(s => s.title === 'Prevenire l’urgenza prima di partire');
+  if (afterIndex < 0) {
+    afterIndex = slides.findIndex(s => s.title === 'Il problema vero non sei solo tu');
+  }
   if (afterIndex < 0) {
     afterIndex = slides.findIndex(s => s.title === 'Il senso civico alla guida: questo sconosciuto');
   }
