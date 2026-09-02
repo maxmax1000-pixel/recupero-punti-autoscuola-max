@@ -21,7 +21,7 @@
     const inner = document.createElement('div');
     inner.className = 'teacher-fit-inner';
     inner.style.width = '100%';
-    inner.style.transformOrigin = 'top center';
+    inner.style.transformOrigin = 'top left';
     while (slide.firstChild) inner.appendChild(slide.firstChild);
     slide.appendChild(inner);
     wrapping = false;
@@ -117,7 +117,7 @@
       );
 
       inner.style.width = `${100 / scale}%`;
-      inner.style.transformOrigin = 'top center';
+      inner.style.transformOrigin = 'top left';
       inner.style.transform = `scale(${scale})`;
       inner.style.marginTop = '0px';
       inner.dataset.fitScale = scale.toFixed(4);
