@@ -1,0 +1,20 @@
+{
+  "entries": [
+    {
+      "slideId": "g1-intro-02-differenza",
+      "script": "intro-slide2-v2.js"
+    },
+    {
+      "slideId": "g1-intro-03-frasi-che-sentiamo",
+      "script": "intro-slide3-clickable.js"
+    },
+    {
+      "slideId": "g1-intro-03b-ci-hai-mai-fatto-caso",
+      "script": "intro-slide3b-ci-hai-mai-fatto-caso.js"
+    },
+    {
+      "slideId": "g1-intro-04-mettiamoci-alla-prova",
+      "script": "intro-slide4-mettiamoci-alla-prova.js"
+    }
+  ]
+}
