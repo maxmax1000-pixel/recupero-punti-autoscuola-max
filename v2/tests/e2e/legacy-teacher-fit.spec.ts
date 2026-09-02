@@ -134,7 +134,7 @@ for (const viewport of [
     await page.setViewportSize({ width: viewport.width, height: viewport.height });
     await prepareTeacherHarness(page);
 
-    await renderLegacySlide(page, "C’hai mai fatto caso?");
+    await renderLegacySlide(page, "Hai mai notato questa cosa?");
     await expectFullyInsideTeacherFrame(page);
     await page.screenshot({
       path: `artifacts/viewport-fit-legacy-teacher-osservazione-${viewport.label}.png`,
