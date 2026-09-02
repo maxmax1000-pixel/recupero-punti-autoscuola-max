@@ -9,6 +9,7 @@ export type SlideType =
   | "clickable-statements"
   | "reveal-question"
   | "observation"
+  | "double-standard"
   | "message-cards"
   | "progressive-reveal"
   | "image-text";
@@ -110,6 +111,27 @@ export interface ObservationSlideData extends BaseSlide {
   conclusionBody: string;
 }
 
+export interface DoubleStandardStatement {
+  id: string;
+  text: string;
+}
+
+export interface DoubleStandardPanel {
+  id: string;
+  title: string;
+  tone: "reflective" | "critical";
+  statements: readonly DoubleStandardStatement[];
+}
+
+export interface DoubleStandardSlideData extends BaseSlide {
+  type: "double-standard";
+  subtitle: string;
+  left: DoubleStandardPanel;
+  right: DoubleStandardPanel;
+  question: string;
+  conclusion: string;
+}
+
 export interface MessageCardItem {
   id: string;
   title: string;
@@ -149,6 +171,7 @@ export type SlideData =
   | ClickableStatementsSlideData
   | RevealQuestionSlideData
   | ObservationSlideData
+  | DoubleStandardSlideData
   | MessageCardsSlideData
   | ProgressiveRevealSlideData
   | ImageTextSlideData;
