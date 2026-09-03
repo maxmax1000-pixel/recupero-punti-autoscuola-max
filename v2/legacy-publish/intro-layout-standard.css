@@ -72,6 +72,6 @@ body.audience #slide .intro-layout {
   }
 
   #slide .teacher-fit-inner > .intro-layout {
-    min-height: 640px !important;
+    min-height: 700px !important;
   }
 }
