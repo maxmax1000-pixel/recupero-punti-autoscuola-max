@@ -171,7 +171,7 @@ async function renderLegacySlide(page: Page, title: string, mode: LegacyMode) {
   await expect(page.locator("#slide .intro-layout")).toBeVisible();
 }
 
-async function expectLegacyLayout(page: Page, mode: LegacyMode) {
+async function expectLegacyLayout(page: Page, mode: LegacyMode, slideTitle: string) {
   const metrics = await page.evaluate((requestedMode) => {
     const slide = document.getElementById("slide");
     const stage = document.querySelector<HTMLElement>(".stage");
@@ -245,18 +245,18 @@ async function expectLegacyLayout(page: Page, mode: LegacyMode) {
     };
   }, mode);
 
-  expect(metrics.documentScroll).toBe(false);
-  expect(metrics.slideOverflow).toBe("hidden");
-  expect(metrics.slideScrollLeft).toBe(0);
-  expect(metrics.slideScrollTop).toBe(0);
-  expect(metrics.slideInsideStage).toBe(true);
-  expect(metrics.layoutInside).toBe(true);
-  expect(metrics.overlappingChildren).toBe(false);
-  expect(metrics.clippedText).toEqual([]);
-  expect(metrics.verticalUse).toBeGreaterThanOrEqual(0.72);
+  expect(metrics.documentScroll, `${slideTitle}: scroll documento`).toBe(false);
+  expect(metrics.slideOverflow, `${slideTitle}: overflow slide`).toBe("hidden");
+  expect(metrics.slideScrollLeft, `${slideTitle}: scroll orizzontale`).toBe(0);
+  expect(metrics.slideScrollTop, `${slideTitle}: scroll verticale`).toBe(0);
+  expect(metrics.slideInsideStage, `${slideTitle}: slide fuori dallo stage`).toBe(true);
+  expect(metrics.layoutInside, `${slideTitle}: layout fuori dalla slide`).toBe(true);
+  expect(metrics.overlappingChildren, `${slideTitle}: sovrapposizione elementi`).toBe(false);
+  expect(metrics.clippedText, `${slideTitle}: testo tagliato`).toEqual([]);
+  expect(metrics.verticalUse, `${slideTitle}: uso verticale insufficiente (${metrics.verticalUse.toFixed(4)})`).toBeGreaterThanOrEqual(0.72);
   if (mode === "audience") {
-    expect(metrics.centerDelta).toBeLessThanOrEqual(1);
-    expect(metrics.contentCenterDelta).toBeLessThanOrEqual(2);
+    expect(metrics.centerDelta, `${slideTitle}: centratura slide`).toBeLessThanOrEqual(1);
+    expect(metrics.contentCenterDelta, `${slideTitle}: centratura contenuto`).toBeLessThanOrEqual(2);
   }
 }
 
@@ -306,7 +306,7 @@ for (const viewport of [
     for (const slide of introSlides) {
       await renderLegacySlide(page, slide.title, "audience");
       await expect(page.getByText(slide.heading, { exact: true })).toBeVisible();
-      await expectLegacyLayout(page, "audience");
+      await expectLegacyLayout(page, "audience", slide.title);
       const slug = screenshotSlugs.get(slide.title);
       if (slug) {
         await page.screenshot({
@@ -328,7 +328,7 @@ for (const viewport of [
     for (const slide of introSlides) {
       await renderLegacySlide(page, slide.title, "teacher");
       await expect(page.getByText(slide.heading, { exact: true })).toBeVisible();
-      await expectLegacyLayout(page, "teacher");
+      await expectLegacyLayout(page, "teacher", slide.title);
       const slug = screenshotSlugs.get(slide.title);
       if (slug) {
         await page.screenshot({
