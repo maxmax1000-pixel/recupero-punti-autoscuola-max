@@ -67,15 +67,8 @@ body.audience #slide .intro-layout {
 
 @media (max-height: 800px) and (min-width: 761px) {
   #slide .intro-layout,
-  body.audience #slide .intro-layout {
-    min-height: 560px !important;
-  }
-
+  body.audience #slide .intro-layout,
   #slide .teacher-fit-inner > .intro-layout {
-    min-height: 760px !important;
-  }
-
-  #slide .teacher-fit-inner > .intro-layout--hero {
-    min-height: 770px !important;
+    min-height: 560px !important;
   }
 }

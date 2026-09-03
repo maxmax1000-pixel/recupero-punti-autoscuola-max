@@ -79,40 +79,50 @@
 
       inner.style.transform = 'none';
       inner.style.marginTop = '0px';
-      inner.style.width = '100%';
+      inner.style.marginLeft = '0px';
+      slide.style.overflow = 'hidden';
 
-      let natural = measure(inner);
-      let scale = Math.min(1, availableWidth / natural.width, availableHeight / natural.height);
+      const minScale = 0.42;
+      const fitsAt = candidate => {
+        inner.style.width = `${availableWidth / candidate}px`;
+        const natural = measure(inner);
+        return {
+          natural,
+          fits:
+            natural.width * candidate <= availableWidth + 1 &&
+            natural.height * candidate <= availableHeight + 1,
+        };
+      };
 
-      for (let pass = 0; pass < 3 && scale < 0.999; pass += 1) {
-        inner.style.width = `${100 / scale}%`;
-        natural = measure(inner);
-        const nextScale = Math.min(
-          1,
-          availableWidth / natural.width,
-          availableHeight / natural.height,
-        );
-        const newScale = Math.min(scale, nextScale);
-        if (Math.abs(newScale - scale) < 0.002) {
-          scale = newScale;
-          break;
+      let low = minScale;
+      let high = 1;
+      let bestScale = minScale;
+      fitsAt(minScale);
+
+      for (let pass = 0; pass < 12; pass += 1) {
+        const candidate = (low + high) / 2;
+        const result = fitsAt(candidate);
+        if (result.fits) {
+          bestScale = candidate;
+          low = candidate;
+        } else {
+          high = candidate;
         }
-        scale = newScale;
       }
 
-      scale = Math.max(0.42, Math.min(1, scale * 0.975));
-      inner.style.width = `${100 / scale}%`;
-      natural = measure(inner);
-      scale = Math.max(
-        0.42,
-        Math.min(
-          scale,
-          availableWidth / natural.width,
-          availableHeight / natural.height,
-        ) * 0.99,
-      );
+      let scale = Math.max(minScale, Math.min(1, bestScale * 0.985));
+      inner.style.width = `${availableWidth / scale}px`;
+      let natural = measure(inner);
 
-      inner.style.width = `${100 / scale}%`;
+      const safeScale = Math.min(
+        scale,
+        availableWidth / natural.width,
+        availableHeight / natural.height,
+      );
+      scale = Math.max(minScale, safeScale * 0.995);
+      inner.style.width = `${availableWidth / scale}px`;
+      natural = measure(inner);
+
       inner.style.transformOrigin = 'top left';
       inner.style.transform = `scale(${scale})`;
       inner.style.marginTop = `${Math.max(0, (availableHeight - natural.height * scale) / 2)}px`;
