@@ -68,6 +68,7 @@ export function ComparisonSlide({ slide }: ComparisonSlideProps) {
     <SlideFrame
       badge={slide.sectionBadge}
       eyebrow={slide.sectionBadge ? undefined : slide.type}
+      layout="comparison"
       title={slide.title}
     >
       <div className={styles.columns}>

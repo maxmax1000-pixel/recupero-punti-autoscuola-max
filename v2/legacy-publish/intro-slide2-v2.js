@@ -32,7 +32,7 @@
 
   const welcome = slides.find(s => s.title === 'Benvenuti');
   if (welcome) {
-    welcome.html = () => `<div class="intro-standard-balanced" style="max-width:1180px;margin:0 auto">
+    welcome.html = () => `<div class="intro-layout intro-layout--hero intro-standard-balanced" style="max-width:1180px;margin:0 auto">
       <div class="kicker">Giorno 1 · Prima ora · Ripartiamo dalle basi</div>
       <h1 style="font-size:clamp(46px,4.6vw,74px);line-height:1.02;margin:0 0 30px">Sei sicuro di conoscere ancora la strada?</h1>
       <p class="lead" style="max-width:1060px;margin:0 auto 28px;text-align:center">Non rifacciamo l’esame della patente. Mettiamo alla prova quello che crediamo di sapere e partiamo da una domanda: <span class="accent">che cosa significa davvero saper guidare?</span></p>
@@ -43,7 +43,7 @@
 
   const poll = slides.find(s => s.title === 'Perché siete qui?');
   if (poll) {
-    poll.html = () => `<div class="intro-standard-balanced" style="max-width:1160px;margin:0 auto">
+    poll.html = () => `<div class="intro-layout intro-layout--hero intro-standard-balanced" style="max-width:1160px;margin:0 auto">
       <div class="kicker">Partiamo dalla classe</div>
       <h2 style="font-size:clamp(40px,4vw,64px);line-height:1.04;margin:0 0 24px">Quale comportamento vi ha portato qui?</h2>
       <p class="muted" style="max-width:980px;margin:0 auto 30px;text-align:center">Non servono dettagli personali: ci interessa soltanto capire quali situazioni vale la pena approfondire.</p>
@@ -51,10 +51,16 @@
       <div class="poll-summary" style="margin-top:28px;text-align:center">Totale indicazioni registrate: <strong style="color:#fff">${Object.values(state.poll).reduce((a,b)=>a+b,0)}</strong> · Clic destro su una voce per diminuire.</div>
     </div>`;
   }
+
+  const drivingQuestion = slides.find(s => s.title === 'Saper guidare o muovere un veicolo?');
+  if (drivingQuestion) {
+    const renderDrivingQuestion = drivingQuestion.html;
+    drivingQuestion.html = () => `<div class="intro-layout intro-layout--hero">${renderDrivingQuestion()}</div>`;
+  }
 })();
 
 if (slides[3] && slides[3].title === 'La differenza è questa') {
-  slides[3].html = () => `<div style="max-width:1260px;margin:0 auto;padding-top:2px;min-height:610px;display:flex;flex-direction:column;justify-content:center">
+  slides[3].html = () => `<div class="intro-layout intro-layout--comparison" style="max-width:1260px;margin:0 auto;padding-top:2px;min-height:610px;display:flex;flex-direction:column;justify-content:center">
     <div style="display:inline-flex;align-self:flex-start;padding:8px 14px;border:1px solid #356b49;border-radius:14px;background:rgba(85,216,135,.08);font-weight:900;color:#baf5cc;margin-bottom:12px">2 di 3</div>
     <h1 style="font-size:clamp(44px,4.1vw,66px);line-height:1.02;margin:0 0 24px;text-align:center">La differenza è questa</h1>
 

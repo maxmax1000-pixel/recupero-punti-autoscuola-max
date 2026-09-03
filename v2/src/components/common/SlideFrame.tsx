@@ -6,6 +6,7 @@ interface SlideFrameProps {
   title: string;
   badge?: string;
   eyebrow?: string;
+  layout?: "standard" | "hero" | "comparison" | "blocks" | "question";
   titleAlignment?: "start" | "center";
 }
 
@@ -13,11 +14,12 @@ export function SlideFrame({
   badge,
   children,
   eyebrow,
+  layout = "standard",
   title,
   titleAlignment = "center",
 }: PropsWithChildren<SlideFrameProps>) {
   return (
-    <article className={styles.frame}>
+    <article className={styles.frame} data-slide-layout={layout}>
       {badge ? (
         <div className={styles.badgeRow}>
           <SlideBadge>{badge}</SlideBadge>

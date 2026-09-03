@@ -9,7 +9,7 @@ interface MessageCardsSlideProps {
 export function MessageCardsSlide({ slide }: MessageCardsSlideProps) {
   return (
     <div className={styles.root} data-testid="message-cards-slide">
-      <SlideFrame title={slide.title}>
+      <SlideFrame layout="blocks" title={slide.title}>
         <div className={styles.content}>
           <section className={styles.introCard}>
             <p>{slide.intro}</p>

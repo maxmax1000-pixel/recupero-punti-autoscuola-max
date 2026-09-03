@@ -21,17 +21,33 @@ if (!Array.isArray(manifest.entries) || manifest.entries.length === 0) {
 const slideIds = manifest.entries.map((entry) => entry.slideId);
 const scripts = manifest.entries.map((entry) => entry.script);
 const assets = manifest.assets ?? [];
+const styles = manifest.styles ?? [];
+const runtimeScripts = manifest.runtimeScripts ?? [];
 
 if (new Set(slideIds).size !== slideIds.length) fail("slideId duplicato nel manifest");
 if (new Set(scripts).size !== scripts.length) fail("script duplicato nel manifest");
 if (!Array.isArray(assets)) fail("manifest.assets deve essere un array");
 if (new Set(assets).size !== assets.length) fail("asset duplicato nel manifest");
+if (!Array.isArray(styles)) fail("manifest.styles deve essere un array");
+if (new Set(styles).size !== styles.length) fail("foglio stile duplicato nel manifest");
+if (!Array.isArray(runtimeScripts)) fail("manifest.runtimeScripts deve essere un array");
+if (new Set(runtimeScripts).size !== runtimeScripts.length) {
+  fail("script runtime duplicato nel manifest");
+}
 
-for (const asset of assets) {
-  if (typeof asset !== "string" || !asset) fail("nome asset mancante");
-  if (asset.includes("/") || asset.includes("..")) fail(`nome asset non valido: ${asset}`);
-  if (!existsSync(resolve(v2Root, "legacy-publish", asset))) {
-    fail(`asset legacy mancante: ${asset}`);
+for (const [label, files] of [
+  ["asset", assets],
+  ["foglio stile", styles],
+  ["script runtime", runtimeScripts],
+]) {
+  for (const file of files) {
+    if (typeof file !== "string" || !file) fail(`nome ${label} mancante`);
+    if (file.includes("/") || file.includes("..")) {
+      fail(`nome ${label} non valido: ${file}`);
+    }
+    if (!existsSync(resolve(v2Root, "legacy-publish", file))) {
+      fail(`${label} legacy mancante: ${file}`);
+    }
   }
 }
 
@@ -65,5 +81,5 @@ if (pilotIds.length !== slideIds.length || pilotIds.some((id, index) => slideIds
 }
 
 console.log(
-  `Legacy publish package OK: ${pilotIds.length} slide coperte nello stesso ordine e ${assets.length} asset verificati.`,
+  `Legacy publish package OK: ${pilotIds.length} slide, ${styles.length} fogli stile, ${runtimeScripts.length} script runtime e ${assets.length} asset verificati.`,
 );

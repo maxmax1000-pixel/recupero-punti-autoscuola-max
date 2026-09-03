@@ -61,7 +61,7 @@
           }
         }
       </style>
-      <div class="civic-legacy" style="max-width:1240px;margin:0 auto;padding-top:0">
+      <div class="intro-layout intro-layout--blocks civic-legacy" style="max-width:1240px;margin:0 auto;padding-top:0">
         <h1 class="civic-title" style="font-size:clamp(46px,4.2vw,68px);line-height:1.03;margin:0 0 18px;text-align:center">Il senso civico alla guida: questo sconosciuto</h1>
 
         <div class="civic-intro" style="border:1px solid rgba(85,216,135,.5);border-radius:18px;background:rgba(8,18,13,.78);padding:16px 34px;text-align:center;font-size:clamp(21px,1.45vw,28px);font-weight:750;line-height:1.28;margin-bottom:14px">

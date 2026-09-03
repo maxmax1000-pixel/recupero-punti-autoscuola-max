@@ -20,7 +20,7 @@
         'Questo è l’approccio corretto da tenere ogni volta che si sa che durante la giornata si dovrà usare un veicolo.'
       ];
 
-      return `<div style="max-width:1240px;margin:0 auto;padding-top:0">
+      return `<div class="intro-layout intro-layout--question" style="max-width:1240px;margin:0 auto;padding-top:0">
         <h1 style="font-size:clamp(44px,4vw,66px);line-height:1.04;margin:0 0 18px;text-align:center">Prevenire l’urgenza prima di partire</h1>
 
         <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:14px">

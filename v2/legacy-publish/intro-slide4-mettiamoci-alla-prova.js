@@ -25,7 +25,7 @@
     teacher: 'Fai leggere la domanda e lascia qualche secondo per rispondere. Non suggerire subito la soluzione. Dopo il confronto, mostra la risposta e usa la frase finale per introdurre il blocco sulle regole generali del Codice della Strada.',
     html: () => {
       const open = state.revealed;
-      return `<div style="max-width:1180px;margin:0 auto;padding-top:8px">
+      return `<div class="intro-layout intro-layout--question" style="max-width:1180px;margin:0 auto;padding-top:8px">
         <h1 style="font-size:clamp(46px,4.3vw,70px);line-height:1.04;margin:0 0 56px">Mettiamoci alla prova</h1>
 
         <div style="border:1px solid #356b49;border-radius:22px;background:#0d1411;padding:34px 42px;text-align:center;box-shadow:inset 0 0 40px rgba(85,216,135,.035)">

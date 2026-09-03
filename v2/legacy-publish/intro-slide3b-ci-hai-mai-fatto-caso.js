@@ -12,7 +12,7 @@
     duration: '6 min',
     teacher: 'Leggi i primi due esempi con tono ironico, senza trasformarli in una ramanzina. Lascia che la classe si riconosca nella contraddizione: chi va più piano di noi sembra troppo lento, chi va più veloce sembra troppo veloce. Poi porta l’attenzione sui criteri reali con cui si sceglie la velocità: limite, struttura della strada, condizioni del veicolo e visibilità. Chiudi collegando il ragionamento alla differenza tra vero autista e semplice portatore sano di veicoli.',
     html: () => `
-      <div style="max-width:1240px;margin:0 auto;padding-top:0">
+      <div class="intro-layout intro-layout--blocks" style="max-width:1240px;margin:0 auto;padding-top:0">
         <div style="display:flex;justify-content:flex-start;margin-bottom:6px"><div style="display:inline-flex;padding:8px 14px;border:1px solid #356b49;border-radius:14px;background:rgba(85,216,135,.08);font-weight:900;color:#baf5cc">4 di 4</div></div>
         <h1 style="font-size:clamp(48px,4.4vw,72px);line-height:1.02;margin:0 0 22px;text-align:center">Hai mai notato questa cosa?</h1>
 

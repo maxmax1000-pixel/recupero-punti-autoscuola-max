@@ -11,7 +11,7 @@ const factorJoiners = ["", "della", "delle", "e della"] as const;
 export function ObservationSlide({ slide }: ObservationSlideProps) {
   return (
     <div className={styles.root} data-testid="observation-slide">
-      <SlideFrame badge={slide.sectionBadge} title={slide.title}>
+      <SlideFrame badge={slide.sectionBadge} layout="blocks" title={slide.title}>
         <div className={styles.content}>
           <section className={styles.quoteCard}>
             <span aria-hidden="true" className={styles.quoteIcon}>💬</span>

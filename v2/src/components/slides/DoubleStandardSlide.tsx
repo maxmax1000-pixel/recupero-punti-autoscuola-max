@@ -19,7 +19,7 @@ export function DoubleStandardSlide({ slide }: DoubleStandardSlideProps) {
 
   return (
     <div className={styles.root} data-testid="double-standard-slide">
-      <SlideFrame title={slide.title}>
+      <SlideFrame layout="comparison" title={slide.title}>
         <div className={styles.content}>
           <p className={styles.subtitle}>{slide.subtitle}</p>
 

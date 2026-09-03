@@ -3,6 +3,13 @@
   "assets": [
     "intro-driving-final.webp"
   ],
+  "styles": [
+    "intro-layout-standard.css"
+  ],
+  "runtimeScripts": [
+    "teacher-fit-fix.js",
+    "audience-fit-fix.js"
+  ],
   "entries": [
     {
       "slideId": "g1-intro-02-differenza",

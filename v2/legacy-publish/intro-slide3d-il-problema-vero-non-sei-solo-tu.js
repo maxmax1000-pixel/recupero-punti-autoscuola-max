@@ -21,7 +21,7 @@
     html: () => {
       const revealedCount = Number(state.quick[revealKey] || 0);
       return `
-        <div style="max-width:1220px;margin:0 auto;padding-top:0">
+        <div class="intro-layout intro-layout--blocks" style="max-width:1220px;margin:0 auto;padding-top:0">
           <h1 style="font-size:clamp(48px,4.3vw,70px);line-height:1.03;margin:0 0 18px;text-align:center">Il problema vero non sei solo tu</h1>
 
           <div style="border:1px solid rgba(85,216,135,.5);border-radius:18px;background:rgba(8,18,13,.78);padding:17px 34px;text-align:center;font-size:clamp(21px,1.45vw,28px);font-weight:750;line-height:1.28;margin-bottom:13px">

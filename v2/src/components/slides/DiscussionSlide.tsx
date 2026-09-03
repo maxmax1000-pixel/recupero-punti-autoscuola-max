@@ -9,7 +9,7 @@ interface DiscussionSlideProps {
 
 export function DiscussionSlide({ slide }: DiscussionSlideProps) {
   return (
-    <SlideFrame eyebrow={slide.type} title={slide.title}>
+    <SlideFrame eyebrow={slide.type} layout="hero" title={slide.title}>
       <div className={styles.layout}>
         <p className={styles.body}>{slide.body}</p>
         {slide.prompt ? <SlideBadge>{slide.prompt}</SlideBadge> : null}

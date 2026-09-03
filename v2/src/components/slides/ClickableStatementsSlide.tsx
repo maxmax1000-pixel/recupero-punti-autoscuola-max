@@ -28,6 +28,7 @@ export function ClickableStatementsSlide({ slide }: ClickableStatementsSlideProp
     <SlideFrame
       badge={slide.sectionBadge}
       eyebrow={slide.sectionBadge ? undefined : slide.type}
+      layout="blocks"
       title={slide.title}
     >
       <ul className={styles.list}>

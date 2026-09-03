@@ -20,7 +20,7 @@ export function ProgressiveRevealSlide({ slide }: ProgressiveRevealSlideProps) {
 
   return (
     <div className={styles.root} data-testid="progressive-reveal-slide">
-      <SlideFrame title={slide.title}>
+      <SlideFrame layout="blocks" title={slide.title}>
         <div className={styles.content}>
           <section className={styles.introCard}>
             <p>{slide.intro}</p>

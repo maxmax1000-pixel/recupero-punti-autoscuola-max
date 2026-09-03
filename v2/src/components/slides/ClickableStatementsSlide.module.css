@@ -109,8 +109,9 @@
 
 @media (min-width: 761px) {
   :global([data-mode="audience"]) .list {
-    min-height: clamp(480px, 66vh, 720px);
-    align-content: center;
+    height: 100%;
+    min-height: 0;
+    align-content: space-evenly;
     gap: clamp(16px, 1.8vh, 22px);
   }
 

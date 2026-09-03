@@ -5,6 +5,10 @@ import { expect, test, type Page } from "@playwright/test";
 const repoRoot = resolve(process.cwd(), "..");
 const baseCss = readFileSync(resolve(repoRoot, "styles-base.css"), "utf8");
 const layoutCss = readFileSync(resolve(repoRoot, "styles-layout.css"), "utf8");
+const introLayoutCss = readFileSync(
+  resolve(repoRoot, "v2/legacy-publish/intro-layout-standard.css"),
+  "utf8",
+);
 
 const observationAdapter = resolve(
   repoRoot,
@@ -18,7 +22,10 @@ const civicAdapter = resolve(
   repoRoot,
   "v2/legacy-publish/intro-slide3c-senso-civico-alla-guida.js",
 );
-const teacherFitScript = resolve(repoRoot, "teacher-fit-fix.js");
+const teacherFitScript = resolve(
+  repoRoot,
+  "v2/legacy-publish/teacher-fit-fix.js",
+);
 
 async function prepareTeacherHarness(page: Page) {
   await page.setContent(`<!doctype html>
@@ -26,7 +33,7 @@ async function prepareTeacherHarness(page: Page) {
       <head>
         <meta charset="utf-8" />
         <base href="http://127.0.0.1:4173/legacy-publish/" />
-        <style>${baseCss}\n${layoutCss}</style>
+        <style>${baseCss}\n${layoutCss}\n${introLayoutCss}</style>
       </head>
       <body>
         <div class="app">
@@ -69,7 +76,7 @@ async function renderLegacySlide(page: Page, title: string) {
   }, title);
 
   const fitted = page.locator("#slide > .teacher-fit-inner");
-  await expect(fitted).toHaveAttribute("data-fit-engine", "teacher-structural-v1");
+  await expect(fitted).toHaveAttribute("data-fit-engine", "teacher-balanced-v2");
 }
 
 async function readVisualFit(page: Page) {

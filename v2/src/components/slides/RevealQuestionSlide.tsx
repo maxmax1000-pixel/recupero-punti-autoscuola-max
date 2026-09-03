@@ -27,7 +27,11 @@ export function RevealQuestionSlide({ slide }: RevealQuestionSlideProps) {
   const toggleSolution = () => setIsRevealed((currentValue) => !currentValue);
 
   return (
-    <SlideFrame title={slide.title} titleAlignment={slide.titleAlignment}>
+    <SlideFrame
+      layout="question"
+      title={slide.title}
+      titleAlignment={slide.titleAlignment}
+    >
       <div
         className={`${styles.layout} ${
           slide.intro?.length ? styles.layoutWithIntro : ""

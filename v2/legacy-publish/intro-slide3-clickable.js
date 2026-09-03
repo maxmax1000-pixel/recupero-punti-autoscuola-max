@@ -46,7 +46,7 @@
         </div>`;
     }).join('');
 
-    return `<div style="max-width:1080px;margin:0 auto;padding-top:6px">
+    return `<div class="intro-layout intro-layout--blocks" style="max-width:1080px;margin:0 auto;padding-top:6px">
       <div style="display:inline-flex;padding:8px 14px;border:1px solid #356b49;border-radius:14px;background:rgba(85,216,135,.08);font-weight:900;color:#baf5cc;margin-bottom:12px">3 di 3</div>
       <h1 style="font-size:clamp(42px,4vw,64px);margin:0 0 28px">Le frasi che sentiamo più spesso</h1>
       <div style="display:grid;gap:18px;min-height:510px;align-content:center">${rows}</div>
